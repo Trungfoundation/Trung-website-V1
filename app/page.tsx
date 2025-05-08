@@ -171,13 +171,13 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-4">Director's Message</h2>
               <div className="text-lg text-muted-foreground mb-6">
                 <p className="mb-4">
-                  "Our foundation stands on the belief that every individual deserves the opportunity to thrive. Through
+                  Our foundation stands on the belief that every individual deserves the opportunity to thrive. Through
                   our programs in education, healthcare, and community development, we're committed to creating lasting
-                  change in the communities we serve."
+                  change in the communities we serve.
                 </p>
                 <p>
-                  "We invite you to join us in this journey of transformation. Together, we can build a more equitable
-                  and sustainable future for all."
+                  We invite you to join us in this journey of transformation. Together, we can build a more equitable
+                  and sustainable future for all.
                 </p>
               </div>
               <div className="font-semibold">Andrew Trung Musana</div>

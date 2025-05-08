@@ -237,13 +237,14 @@ export default function AboutPage() {
                   name="Counsel Aisha Nakisinje"
                   title="Legal Advisor"
                   bio="Counsel Aisha oversees all Legal programs ensuring alignment with legal obligations/requirements."
-                  image="/images/dorcus.jpg"
+                  image="/images/counsel-aisha-nakisinje.jpg"
+
                 />
                 <TeamMember
                   name="Mr. Ken Wandabusi"
                   title="Patron"
                   bio="Mr Wandabusi provides oversight and guidance to ensure all programs operate within the bounds of the organizations strategic intent"
-                  image="/images/team-3.jpg"
+                  image="/images/ken-wandabusi.jpg"
                 />
               </div>
               {/*
@@ -399,7 +400,7 @@ export default function AboutPage() {
                <Button variant="outline">View Registration Documents</Button>
               </div>*/}
             </Card>
-            <Card className="p-6">
+            {/*<Card className="p-6">
               <h3 className="text-xl font-bold mb-4">Governance Documents</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b pb-3">
@@ -448,7 +449,7 @@ export default function AboutPage() {
                   </Button>
                 </div>
               </div>
-            </Card>
+            </Card>*/}
           </div>
         </div>
       </section>

@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
       "Before the mobile clinic came to our village, I had been suffering with untreated diabetes for years. The doctors not only provided treatment but taught me how to manage my condition. I'm healthier now than I've been in a decade.",
     image: "/african-man-portrait.png",
     location: "Tororo District, Uganda",
-  },
+  }{/*,
   {
     id: 3,
     name: "Achieng Grace",
@@ -59,7 +59,7 @@ const testimonials: Testimonial[] = [
     quote:
       "The community garden has brought our neighborhood together while providing fresh, nutritious food for our families. My children are eating better, and I've developed friendships with neighbors I never knew before.",
     image: "/african-woman-farmer-portrait.png",
-    location: "Jinja, Uganda",
+    location: "Jinja, Uganda",*/}
   },
 ]
 

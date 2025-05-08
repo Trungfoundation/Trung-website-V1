@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface Testimonial {
-  id: number
-  name: string
-  role: string
-  quote: string
-  image: string
-  location: string
+  id: number;
+  name: string;
+  role: string;
+  quote: string;
+  image: string;
+  location: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
       "Before the mobile clinic came to our village, I had been suffering with untreated diabetes for years. The doctors not only provided treatment but taught me how to manage my condition. I'm healthier now than I've been in a decade.",
     image: "/african-man-portrait.png",
     location: "Tororo District, Uganda",
-  }{/*,
+  },
   {
     id: 3,
     name: "Achieng Grace",
@@ -59,20 +59,20 @@ const testimonials: Testimonial[] = [
     quote:
       "The community garden has brought our neighborhood together while providing fresh, nutritious food for our families. My children are eating better, and I've developed friendships with neighbors I never knew before.",
     image: "/african-woman-farmer-portrait.png",
-    location: "Jinja, Uganda",*/}
+    location: "Jinja, Uganda",
   },
-]
+];
 
 export function TestimonialsSection() {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const nextTestimonial = () => {
-    setActiveIndex((current) => (current + 1) % testimonials.length)
-  }
+    setActiveIndex((current) => (current + 1) % testimonials.length);
+  };
 
   const prevTestimonial = () => {
-    setActiveIndex((current) => (current - 1 + testimonials.length) % testimonials.length)
-  }
+    setActiveIndex((current) => (current - 1 + testimonials.length) % testimonials.length);
+  };
 
   return (
     <section className="py-16 bg-gray-50">
@@ -120,7 +120,7 @@ export function TestimonialsSection() {
                 onClick={() => setActiveIndex(index)}
                 className={cn(
                   "w-3 h-3 rounded-full transition-all duration-300",
-                  activeIndex === index ? "bg-emerald-600 w-6" : "bg-gray-300",
+                  activeIndex === index ? "bg-emerald-600 w-6" : "bg-gray-300"
                 )}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -150,5 +150,5 @@ export function TestimonialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -13,7 +13,7 @@ export default function WomenEmpowermentPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/women-crafts-program.jpg"
+          src="/images/women-certification.jpeg"
           alt="Women Empowerment Programs"
           fill
           className="object-cover brightness-[0.7]"
@@ -71,7 +71,7 @@ export default function WomenEmpowermentPage() {
             <div className="md:w-1/2">
               <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                 <Image
-                  src="/images/women-crafts-program.jpg"
+                  src="/trung_logo.png"
                   alt="Women in skills training"
                   fill
                   className="object-cover"
@@ -179,10 +179,10 @@ export default function WomenEmpowermentPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
-                    src="/images/training-seminar-1.jpg"
+                    src="/images/women-certification.jpeg"
                     alt="Leadership Development"
                     fill
-                    className="object-cover"
+                    className="object-contain object-center"
                   />
                 </div>
                 <div>
@@ -222,7 +222,7 @@ export default function WomenEmpowermentPage() {
       </section>
 
       {/* Impact Stories */}
-      <section className="py-16 px-4 md:px-6 bg-white">
+      {/*<section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-4">Impact Stories</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
@@ -308,7 +308,7 @@ export default function WomenEmpowermentPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Program Stats */}
       <section className="py-16 px-4 md:px-6 bg-muted">

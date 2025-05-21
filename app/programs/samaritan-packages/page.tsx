@@ -3,9 +3,7 @@ import Link from "next/link"
 import { ArrowRight, CheckCircle, Package, Users, Calendar } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
 
 export default function SamaritanPackagesPage() {
   return (
@@ -13,7 +11,7 @@ export default function SamaritanPackagesPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/community-aid-distribution.jpg"
+          src="/images/samaritan-package-supplies.jpeg"
           alt="Samaritan Packages Program"
           fill
           className="object-cover brightness-[0.7]"
@@ -71,7 +69,12 @@ export default function SamaritanPackagesPage() {
             </div>
             <div className="md:w-1/2">
               <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                <Image src="/images/causes-2.jpg" alt="Samaritan Packages" fill className="object-cover" />
+                <Image
+                  src="/images/samaritan-package-supplies.jpeg"
+                  alt="Samaritan Packages"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
@@ -94,7 +97,7 @@ export default function SamaritanPackagesPage() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
-                    src="/images/community-aid-distribution.jpg"
+                    src="/images/samaritan-package-supplies.jpeg"
                     alt="Food Security Packages"
                     fill
                     className="object-cover"

@@ -32,34 +32,36 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 2,
-    title: "Healthcare Outreach in Tororo",
-    date: "July 8, 2025",
-    time: "9:00 AM - 4:00 PM",
-    location: "Tororo District Hospital",
-    image: "/images/healthcare-1.jpg",
-    slug: "healthcare-outreach-tororo",
-    description: "Free medical consultations, screenings, and medications for residents of Tororo District.",
+    title: "Field Work in Mbale",
+    date: "June 25-30, 2025",
+    time: "All Day",
+    location: "Mbale, Uganda",
+    image: "/images/field-work-mbale.jpeg",
+    slug: "field-work-mbale",
+    description:
+      "A comprehensive field work initiative focused on supporting children and youth through feeding programs, scholastic materials, medical outreach, and empowerment.",
   },
   {
     id: 3,
-    title: "Women's Entrepreneurship Workshop",
-    date: "July 22, 2025",
-    time: "2:00 PM - 5:00 PM",
-    location: "Jinja Business Hub",
-    image: "/images/women-1.jpg",
-    slug: "women-entrepreneurship-workshop",
-    description: "Learn essential business skills and network with successful women entrepreneurs from across Uganda.",
+    title: "Annual Fundraising Gala",
+    date: "November 30, 2025",
+    time: "6:00 PM - 10:00 PM",
+    location: "Las Vegas Hotel, Bunga kawuku",
+    image: "/images/healthcare1.jpg",
+    slug: "annual-fundraising-gala",
+    description:
+      "Join us for an elegant evening of celebration and support as we raise funds for our education initiatives. The event will feature dinner, live entertainment, and inspiring stories from program beneficiaries.",
   },
   {
     id: 4,
-    title: "Education Center Open House",
-    date: "August 5, 2025",
-    time: "3:00 PM - 6:00 PM",
-    location: "Mbale Education Center",
-    image: "/images/education5.jpg",
-    slug: "education-center-open-house",
+    title: "Children's Christmas Activities",
+    date: "December 10-15, 2025",
+    time: "9:00 AM - 5:00 PM",
+    location: "Various Locations",
+    image: "/images/kids-muzungu.jpg",
+    slug: "childrens-christmas-activities",
     description:
-      "Tour our new facilities, meet our teachers, and learn about our educational programs for children and adults.",
+      "Spread holiday joy to children in need through our Christmas party, home visits, games, gift distribution, and hospital visits.",
   },
 ]
 
@@ -93,7 +95,7 @@ export function UpcomingEvents() {
               <div className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl">
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
-                    src={event.image || "/placeholder.svg"}
+                    src={event.title === "Field Work in Mbale" ? "/images/field-work-mbale.jpeg" : "/images/events.jpg"}
                     alt={event.title}
                     fill
                     className={cn(

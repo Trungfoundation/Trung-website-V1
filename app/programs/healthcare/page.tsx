@@ -1,19 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Heart, StethoscopeIcon, Users, BabyIcon } from "lucide-react"
+import { CheckCircle, Heart, StethoscopeIcon, Users, BabyIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
 
 export default function HealthcareProgramPage() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[300px] md:h-[400px]">
+      {/*<section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/medical-camp-3.jpg"
+          src="/images/dr.chaka-barasa.jpeg"
           alt="Healthcare Programs"
           fill
           className="object-cover brightness-[0.7]"
@@ -25,7 +23,7 @@ export default function HealthcareProgramPage() {
             Improving access to quality healthcare services in underserved communities
           </p>
         </div>
-      </section>
+      </section>*/}
 
       {/* Program Overview */}
       <section className="py-16 px-4 md:px-6 bg-white">
@@ -66,7 +64,7 @@ export default function HealthcareProgramPage() {
             </div>
             <div className="md:w-1/2">
               <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                <Image src="/images/healthcare1.jpg" alt="Healthcare services" fill className="object-cover" />
+                <Image src="/trung_logo.png" alt="Healthcare services" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -88,7 +86,12 @@ export default function HealthcareProgramPage() {
             <TabsContent value="mobile">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image src="/images/medical-camp-2.jpg" alt="Mobile Health Clinic" fill className="object-cover" />
+                  <Image
+                    src="/images/mobile-health-clinic.jpeg"
+                    alt="Mobile Health Clinic"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4">Mobile Health Clinics</h3>
@@ -103,6 +106,20 @@ export default function HealthcareProgramPage() {
                       distance, transportation costs, and time constraints that often prevent people from seeking
                       medical care.
                     </p>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="relative h-16 w-16 rounded-full overflow-hidden">
+                        <Image
+                          src="/images/dr-chaka-barasa.jpeg"
+                          alt="Dr. Chaka Barasa"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold">Dr. Chaka Barasa</h4>
+                        <p className="text-sm text-muted-foreground">Community Health Team Leader</p>
+                      </div>
+                    </div>
                     <div className="space-y-2 pt-2">
                       <h4 className="font-semibold text-foreground">Key Services:</h4>
                       <ul className="list-disc pl-5 space-y-1">
@@ -164,7 +181,7 @@ export default function HealthcareProgramPage() {
             <TabsContent value="community">
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image src="/images/healthcare2.jpg" alt="Community Health" fill className="object-cover" />
+                  <Image src="/images/dr-chaka-barasa.jpeg" alt="Community Health" fill className="object-cover" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4">Community Health Workers</h3>
@@ -201,7 +218,7 @@ export default function HealthcareProgramPage() {
         </div>
       </section>
 
-      {/* Impact Stories */}
+      {/* Impact Stories
       <section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-4">Impact Stories</h2>
@@ -288,7 +305,7 @@ export default function HealthcareProgramPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Program Stats */}
       <section className="py-16 px-4 md:px-6 bg-muted">

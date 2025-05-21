@@ -1,11 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Heart, Home, Gift, School, Music } from "lucide-react"
+import { CheckCircle, Heart, Home, Gift, School, Music } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
 
 export default function OrphanSupportPage() {
   return (
@@ -13,7 +11,7 @@ export default function OrphanSupportPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/kids-muzungu.jpg"
+          src="/images/orphan-support.jpeg"
           alt="Orphan Support Programs"
           fill
           className="object-cover brightness-[0.7]"

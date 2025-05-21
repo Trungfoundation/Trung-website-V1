@@ -5,7 +5,6 @@ import { ArrowRight, Calendar, CheckCircle, Clock, DollarSign, Heart, MapPin, Sh
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import VolunteerStoryModal from "@/components/volunteer-story-modal"
 import ApplicationModal from "@/components/application-modal"
@@ -16,7 +15,13 @@ export default function GetInvolvedPage() {
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
-        <Image src="/images/volunteer.jpg" alt="Get Involved" fill className="object-cover brightness-[0.7]" priority />
+        <Image
+          src="/images/where-we-work.jpeg"
+          alt="Get Involved"
+          fill
+          className="object-cover brightness-[0.7]"
+          priority
+        />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Get Involved</h1>
           <p className="text-xl text-white max-w-2xl">
@@ -480,7 +485,7 @@ export default function GetInvolvedPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="overflow-hidden">
               <div className="relative h-64">
-                <Image src="/images/volunteer-2.jpg" alt="Volunteer Story" fill className="object-cover" />
+                <Image src="/images/femh shero.jpeg" alt="Femh Shero's Story" fill className="object-contain" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">Femh Shero's Story</h3>
@@ -497,7 +502,7 @@ export default function GetInvolvedPage() {
                     name="Femh Shero"
                     role="Volunteer Mentor"
                     duration="2 years"
-                    image="/images/volunteer-2.jpg"
+                    image="/images/femh shero.jpeg"
                     trigger={
                       <Button variant="outline" size="sm">
                         Read Full Story
@@ -543,7 +548,12 @@ export default function GetInvolvedPage() {
 
             <Card className="overflow-hidden">
               <div className="relative h-64">
-                <Image src="/images/medical-camp-3.jpg" alt="Volunteer Story" fill className="object-cover" />
+                <Image
+                  src="/images/dr-chaka-barasa.jpeg"
+                  alt="Dr. Chaka Barasa's Story"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">Dr. Chaka Barasa's Story</h3>
@@ -560,7 +570,7 @@ export default function GetInvolvedPage() {
                     name="Dr. Chaka Barasa"
                     role="Healthcare Volunteer"
                     duration="3 years"
-                    image="/images/medical-camp-3.jpg"
+                    image="/images/dr-chaka-barasa.jpeg"
                     trigger={
                       <Button variant="outline" size="sm">
                         Read Full Story
@@ -616,7 +626,12 @@ export default function GetInvolvedPage() {
 
             <Card className="overflow-hidden">
               <div className="relative h-64">
-                <Image src="/images/workshop-1.jpg" alt="Volunteer Story" fill className="object-cover" />
+                <Image
+                  src="/images/raul-zihash-portrait.jpeg"
+                  alt="Raul Zihash's Story"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">Raul Zihash's Story</h3>
@@ -628,15 +643,13 @@ export default function GetInvolvedPage() {
                 <div className="flex justify-between items-center">
                   <div>
                     <div className="font-semibold">Raul Zihash</div>
-                    <div className="text-sm text-muted-foreground">
-                      Community and Outreach Volunteer
-                    </div>
+                    <div className="text-sm text-muted-foreground">Community and Outreach Volunteer</div>
                   </div>
                   <VolunteerStoryModal
                     name="Raul Zihash"
                     role="Community and Outreach Director"
                     duration="4 years"
-                    image="/images/workshop-1.jpg"
+                    image="/images/raul-zihash-portrait.jpeg"
                     trigger={
                       <Button variant="outline" size="sm">
                         Read Full Story
@@ -753,6 +766,7 @@ export default function GetInvolvedPage() {
                     <Calendar size={14} />
                     <span>July 15-30, 2025</span>
                   </div>
+                  
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Clock size={14} />
                     <span>Various Shifts</span>

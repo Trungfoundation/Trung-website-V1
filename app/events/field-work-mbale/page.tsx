@@ -19,7 +19,7 @@ export default function FieldWorkMbalePage() {
     location: "Mbale, Uganda",
     description:
       "A comprehensive field work initiative focused on supporting children and youth in the Mbale region. Our team will be conducting various activities including feeding programs, distribution of scholastic materials, medical outreach, and youth empowerment workshops. This six-day program aims to make a significant impact on the lives of vulnerable children and youth in the area.",
-    image: "/images/community-aid-distribution.jpg",
+    image: "/images/field-work-mbale.jpeg",
     capacity: "Volunteers needed",
     additionalInfo:
       "We welcome volunteers to join us for this impactful field work. Transportation will be provided from Kampala. Please bring appropriate clothing for field activities. Accommodation will be arranged for volunteers participating for the full duration.",
@@ -30,9 +30,8 @@ export default function FieldWorkMbalePage() {
       { time: "June 29-30", activity: "Youth empowerment workshops" },
     ],
     speakers: [
-      { name: "Andrew Trung Musana", title: "Foundation Director", image: "/images/trung-musana.jpg" },
-      { name: "Dr. Maria Rodriguez", title: "Healthcare Program Manager", image: "/images/maria.jpg" },
-      { name: "Michael Okello", title: "Youth Program Director", image: "/images/team-1.jpg" },
+      { name: "Andrew Trung Musana", title: "Foundation Director" },
+      { name: "Dr. Chaka Barasa", title: "Healthcare Program Coordinator" },
     ],
     isPast: false,
   }
@@ -73,13 +72,7 @@ export default function FieldWorkMbalePage() {
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
-        <Image
-          src={event.image || "/placeholder.svg"}
-          alt={event.title}
-          fill
-          className="object-cover brightness-[0.7]"
-          priority
-        />
+        <Image src={event.image || "/placeholder.svg"} alt={event.title} fill className="object-cover" priority />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{event.title}</h1>
           <div className="flex flex-wrap gap-3 justify-center">
@@ -196,14 +189,6 @@ export default function FieldWorkMbalePage() {
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
                   {event.speakers.map((speaker, index) => (
                     <div key={index} className="flex flex-col items-center text-center p-4 border rounded-lg">
-                      <div className="relative h-24 w-24 rounded-full overflow-hidden mb-3">
-                        <Image
-                          src={speaker.image || "/placeholder.svg?height=100&width=100"}
-                          alt={speaker.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
                       <div className="font-medium">{speaker.name}</div>
                       <div className="text-sm text-muted-foreground">{speaker.title}</div>
                     </div>
@@ -293,7 +278,8 @@ export default function FieldWorkMbalePage() {
         </div>
       </section>
 
-      {/* Previous Field Work */}
+      {/* 
+      Previous Field Work Section - Commented out as requested
       <section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-8">Previous Field Work Highlights</h2>
@@ -322,6 +308,7 @@ export default function FieldWorkMbalePage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* CTA */}
       <section className="py-16 px-4 md:px-6 bg-primary text-primary-foreground">

@@ -19,7 +19,7 @@ export default function FoundationGeneralMeetingPage() {
     location: "Fairway Hotel, Kampala",
     description:
       "The annual general meeting of Trung Foundation bringing together board members, staff, partners, and stakeholders to review our progress, discuss future initiatives, and strengthen our collective commitment to serving communities in need. This meeting is a crucial opportunity for strategic planning and alignment of our vision for the coming year.",
-    image: "/images/workshop-1.jpg",
+    image: "/images/foundation-general-meeting-flyer.jpeg",
     capacity: "By invitation",
     additionalInfo:
       "Dress code: Official Green for Trung Foundation members. Lunch and refreshments will be provided. Please bring your membership ID and any relevant reports or materials for discussion.",
@@ -82,7 +82,7 @@ export default function FoundationGeneralMeetingPage() {
           src={event.image || "/placeholder.svg"}
           alt={event.title}
           fill
-          className="object-cover brightness-[0.7]"
+          className="object-cover brightness-[0.7] scale-50 transform origin-center"
           priority
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">

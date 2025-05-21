@@ -60,7 +60,7 @@ export default function ProgramsPage() {
                   title="Healthcare Access"
                   category="Healthcare"
                   description="Improving access to essential healthcare services and preventive care."
-                  image="/images/medical-camp-3.jpg"
+                  image="/images/mobile-health-clinic.jpeg"
                   status="Active"
                   icon={<Heart className="h-5 w-5" />}
                 />
@@ -68,7 +68,7 @@ export default function ProgramsPage() {
                   title="Women Empowerment"
                   category="Empowerment"
                   description="Supporting women through skills training, mentorship, and entrepreneurship."
-                  image="/images/women-1.jpg"
+                  image="/images/women-certification.jpeg"
                   status="Active"
                   icon={<Users className="h-5 w-5" />}
                 />
@@ -108,7 +108,7 @@ export default function ProgramsPage() {
                   title="Community Centers"
                   category="Community Development"
                   description="Building and operating community centers that serve as hubs for various programs."
-                  image="/images/training-seminar-1.jpg"
+                  image="/images/community-centers.jpeg"
                   status="Active"
                   icon={<Home className="h-5 w-5" />}
                 />
@@ -422,7 +422,7 @@ export default function ProgramsPage() {
             </div>
             <div className="w-full md:w-1/2">
               <div className="relative h-[300px] sm:h-[350px] md:h-[400px] w-full rounded-lg overflow-hidden border">
-                <Image src="/images/volunteer.jpg" alt="Program Locations Map" fill className="object-cover" />
+                <Image src="/images/where-we-work.jpeg" alt="Program Locations Map" fill className="object-cover" />
               </div>
             </div>
           </div>

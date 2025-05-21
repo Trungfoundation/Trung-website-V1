@@ -2,18 +2,15 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Calendar, MapPin } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
 
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import NewsletterForm from "@/components/newsletter-form"
 import ImpactCounter from "@/components/impact-counter"
 import FeaturedProgram from "@/components/featured-program"
-import RegisterButton from "@/components/register-button"
-import { TestimonialsSection } from "@/components/testimonials-section"
-{/*import { UpcomingEvents } from "@/components/upcoming-events"*/}
+import { UpcomingEvents } from "@/components/upcoming-events"
 
 export default function Home() {
   const [api, setApi] = useState<any>(null)
@@ -76,7 +73,7 @@ export default function Home() {
       <section className="relative w-full">
         <Carousel className="w-full" setApi={setApi} opts={{ loop: true }}>
           <CarouselContent>
-            <CarouselItem>
+         {/*   <CarouselItem>
               <div className="relative h-[500px] w-full">
                 <Image
                   src="/images/cover.jpg"
@@ -140,6 +137,38 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </CarouselItem>*/}
+            <CarouselItem>
+              <div className="relative h-[500px] w-full">
+                <Image
+                  src="/images/trung-wallpaper-1.jpg"
+                  alt="Trung Foundation Team"
+                  fill
+                  className="object-cover brightness-[0.7]"
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">We Give Hope</h1>
+                  <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl">
+                    We give hope, we give love, we give the smile
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Link href="/about">
+                      <Button size="lg" className="bg-primary hover:bg-primary/90">
+                        About Us
+                      </Button>
+                    </Link>
+                    <Link href="/get-involved">
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm"
+                      >
+                        Get Involved
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </CarouselItem>
           </CarouselContent>
           <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10">
@@ -171,13 +200,13 @@ export default function Home() {
               <h2 className="text-3xl font-bold mb-4">Director's Message</h2>
               <div className="text-lg text-muted-foreground mb-6">
                 <p className="mb-4">
-                  Our foundation stands on the belief that every individual deserves the opportunity to thrive. Through
+                  "Our foundation stands on the belief that every individual deserves the opportunity to thrive. Through
                   our programs in education, healthcare, and community development, we're committed to creating lasting
-                  change in the communities we serve.
+                  change in the communities we serve."
                 </p>
                 <p>
-                  We invite you to join us in this journey of transformation. Together, we can build a more equitable
-                  and sustainable future for all.
+                  "We invite you to join us in this journey of transformation. Together, we can build a more equitable
+                  and sustainable future for all."
                 </p>
               </div>
               <div className="font-semibold">Andrew Trung Musana</div>
@@ -213,102 +242,27 @@ export default function Home() {
             <FeaturedProgram
               title="Education Initiative"
               description="Providing quality education and learning resources to underserved communities."
-              image="/images/volunteer-2.jpg"
+              image="/images/trund-education-2.jpg"
               link="/programs/education"
             />
             <FeaturedProgram
               title="Healthcare Access"
               description="Improving access to essential healthcare services and preventive care."
-              image="/images/medical-camp-3.jpg"
+              image="/images/healthcare-1.jpg"
               link="/programs/healthcare"
             />
             <FeaturedProgram
               title="Women Empowerment"
               description="Supporting women through skills training, mentorship, and entrepreneurship."
-              image="/images/women-1.jpg"
+              image="/images/we-give-our-best.jpg"
               link="/programs/women-empowerment"
             />
           </div>
         </div>
       </section>
 
-      {/* Upcoming Events Section 
-      <UpcomingEvents />*/}
-
-      {/* Upcoming Events */}
-      <section className="py-16 px-4 md:px-6 bg-muted" id="upcoming-events">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold">Upcoming Events</h2>
-            <Link href="/events" className="text-primary flex items-center gap-1 hover:underline">
-              View All Events <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <Image src="/images/workshop-1.jpg" alt="Foundation's General Meeting" fill className="object-cover" />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 text-primary mb-2">
-                  <Calendar size={16} />
-                  <span>May 18, 2025</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Foundation's General Meeting</h3>
-                <div className="flex items-center gap-2 text-muted-foreground mb-4">
-                  <MapPin size={16} />
-                  <span>Fairway Hotel, Kampala</span>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  Annual general meeting bringing together board members, staff, partners, and stakeholders to review
-                  progress and discuss future initiatives.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <RegisterButton eventTitle="Foundation's General Meeting" eventDate="May 18, 2025" variant="default">
-                    Register Now
-                  </RegisterButton>
-                  <Link href="/events/foundation-general-meeting">
-                    <Button variant="outline">View Details</Button>
-                  </Link>
-                </div>
-              </div>
-            </Card>
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <Image
-                  src="/images/community-aid-distribution.jpg"
-                  alt="Field Work in Mbale"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2 text-primary mb-2">
-                  <Calendar size={16} />
-                  <span>June 25-30, 2025</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2">Field Work in Mbale</h3>
-                <div className="flex items-center gap-2 text-muted-foreground mb-4">
-                  <MapPin size={16} />
-                  <span>Mbale, Uganda</span>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  A comprehensive field work initiative focused on supporting children and youth through feeding
-                  programs, scholastic materials, medical outreach, and empowerment.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <RegisterButton eventTitle="Field Work in Mbale" eventDate="June 25-30, 2025" variant="default">
-                    Register Now
-                  </RegisterButton>
-                  <Link href="/events/field-work-mbale">
-                    <Button variant="outline">View Details</Button>
-                  </Link>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* Upcoming Events Section */}
+      <UpcomingEvents />
 
       {/* Newsletter Subscription */}
       <section className="py-16 px-4 md:px-6 bg-primary text-primary-foreground">
@@ -321,13 +275,92 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <TestimonialsSection />
+      {/* Orphanage Anthem */}
+      <section className="py-16 px-4 md:px-6 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-8">ORPHANAGE ANTHEM</h2>
+          <div className="bg-muted/30 p-8 rounded-lg border border-muted">
+            <div className="prose prose-lg mx-auto text-center">
+              <p className="mb-6">
+                We save the children
+                <br />
+                We save the orphans
+                <br />
+                Lord save the future of the orphans
+              </p>
+
+              <p className="mb-6">
+                We believe in You
+                <br />
+                We trust in You
+                <br />
+                With all our hearts
+              </p>
+
+              <p className="mb-6">
+                And God knew us
+                <br />
+                Gave us the children
+                <br />
+                He loves them all
+                <br />
+                He loves everyone
+                <br />
+                Embrace us all
+                <br />
+                Brought us to earth
+              </p>
+
+              <p className="mb-6">
+                And now God gave us orphanage first
+                <br />
+                To bring Hope
+                <br />
+                In this world
+              </p>
+
+              <p className="mb-6 font-semibold">
+                Orphanage first the Lord's vision
+                <br />
+                Orphanage first The hope to the hopeless
+                <br />
+                Orphanage first the help to the helpless
+                <br />
+                Orphanage first To die for the orphans
+              </p>
+
+              <p className="mb-6">
+                And we give hope
+                <br />
+                And we Give love
+                <br />
+                And we give the smile
+              </p>
+
+              <p className="mb-6">
+                And now one family
+                <br />
+                In christ the Lord
+              </p>
+
+              <p className="mb-6">
+                We bless the Lord for orphanage first
+                <br />
+                In this world
+                <br />
+                Helping the children
+              </p>
+
+              <p>Country wide...</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Partners/Sponsors */}
-      <section className="py-16 px-4 md:px-6 bg-white">
+      <section className="py-8 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Partners</h2>
+          <h2 className="text-3xl font-bold text-center mb-6">Our Partners</h2>
           <Carousel
             className="w-full"
             opts={{
@@ -361,13 +394,13 @@ export default function Home() {
                 </div>
               </CarouselItem>*/}
               <CarouselItem className="basis-full flex justify-center">
-                <div className="relative w-64 h-64 mx-auto flex items-center justify-center">
+                <div className="relative w-32 h-32 mx-auto flex items-center justify-center">
                   <div className="bg-white rounded-lg p-1 w-full h-full flex items-center justify-center">
                     <Image
                       src="/images/first-orphanage-logo.png"
                       alt="First Orphanage"
-                      width={200}
-                      height={200}
+                      width={100}
+                      height={100}
                       className="object-contain"
                     />
                   </div>

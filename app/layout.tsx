@@ -200,7 +200,7 @@ function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/trungfoundation?igsh=bjZ4dTVocnljYnQ%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/80 hover:text-white transition-colors"
@@ -273,9 +273,8 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 pt-6 text-center text-white/70">
+        <div className="border-t border-white/15 pt-6 text-center text-white/70">
           <p>© {new Date().getFullYear()} Trung Foundation. All rights reserved.</p>
-         {/* <p className="mt-2">Contact: Trungmusana@gmail.com | (256) 762-121-251</p>*/}
         </div>
       </div>
     </footer>

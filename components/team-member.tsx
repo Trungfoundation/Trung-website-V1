@@ -14,8 +14,17 @@ interface TeamMemberProps {
 export default function TeamMember({ name, title, bio, image, compact = false }: TeamMemberProps) {
   return (
     <Card className="overflow-hidden h-full">
-      <div className="relative h-64 w-full">
-        <Image src={image || "/placeholder.svg"} alt={name} fill className="object-cover" />
+      <div className="relative w-full h-48 mb-4 overflow-hidden rounded-lg">
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={name}
+          fill
+          className="object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.src = "/diverse-group.png"
+          }}
+        />
       </div>
       <CardContent className={compact ? "p-4" : "p-6"}>
         <h3 className={`font-bold ${compact ? "text-lg" : "text-xl"} mb-1`}>{name}</h3>

@@ -10,7 +10,6 @@ import { Badge } from "@/components/ui/badge"
 import RegisterButton from "@/components/register-button"
 import DownloadButton from "@/components/download-button"
 
-
 // This is a dynamic page that will handle all event detail pages
 export default function EventDetailPage({ params }: { params: { slug: string } }) {
   // In a real application, you would fetch the event data based on the slug
@@ -308,7 +307,7 @@ function getAllEvents() {
       location: "Las Vegas Hotel, Bunga Kawuku",
       description:
         "Join us for an elegant evening of celebration and support as we raise funds for our education initiatives. The event will feature dinner, live entertainment, and inspiring stories from program beneficiaries. All proceeds will go directly to supporting our education programs in underserved communities.",
-      image: "/images/healthcare1.jpg",
+      image: "/images/volunteer-and-women.jpf",
       capacity: "Limited to 200 guests",
       additionalInfo:
         "Formal attire requested. Ticket includes dinner, drinks, and entertainment. Parking is available at the venue.",
@@ -320,8 +319,8 @@ function getAllEvents() {
         { time: "9:30 PM", activity: "Entertainment and Dancing" },
       ],
       speakers: [
-        { name: "Mr. Andrew Trung Musana", title: "Executive Director", image: "/images/trung-musana.jpg" },
-        { name: "Mr. Raul Zihash", title: "General Secretary", image: "/images/team-3.jpg" },
+        { name: "Mr. Andrew Trung Musana", title: "Executive Director" },
+        { name: "Mr. Raul Zihash", title: "General Secretary" },
       ],
       isPast: false,
     },
@@ -333,7 +332,7 @@ function getAllEvents() {
       location: "Mbale, Uganda",
       description:
         "A comprehensive field work initiative focused on supporting children and youth in the Mbale region. Our team will be conducting various activities including feeding programs, distribution of scholastic materials, medical outreach, and youth empowerment workshops. This six-day program aims to make a significant impact on the lives of vulnerable children and youth in the area.",
-      image: "/images/community-aid-distribution.jpg",
+      image: "/images/where-we-work.jpeg",
       capacity: "Volunteers needed",
       additionalInfo:
         "We welcome volunteers to join us for this impactful field work. Transportation will be provided from Kampala. Please bring appropriate clothing for field activities. Accommodation will be arranged for volunteers participating for the full duration.",
@@ -344,9 +343,8 @@ function getAllEvents() {
         { time: "June 29-30", activity: "Youth empowerment workshops" },
       ],
       speakers: [
-        { name: "Andrew Trung Musana", title: "Foundation Director", image: "/images/trung-musana.jpg" },
-        { name: "Raul Zihash", title: "Community and Outreach Director", image: "/images/team-3.jpg" },
-        { name: "Dr. Maria Rodriguez", title: "Healthcare Program Manager", image: "/images/maria.jpg" },
+        { name: "Andrew Trung Musana", title: "Foundation Director" },
+        { name: "Raul Zihash", title: "Community and Outreach Director" },
       ],
       isPast: false,
     },
@@ -358,7 +356,7 @@ function getAllEvents() {
       location: "Fairway Hotel, Kampala",
       description:
         "The annual general meeting of Trung Foundation bringing together board members, staff, partners, and stakeholders to review our progress, discuss future initiatives, and strengthen our collective commitment to serving communities in need.",
-      image: "/images/workshop-1.jpg",
+      image: "/images/foundation-general-meeting-flyer.jpeg",
       capacity: "By invitation",
       additionalInfo:
         "Dress code: Official Green for Trung Foundation members. Lunch and refreshments will be provided.",
@@ -372,11 +370,11 @@ function getAllEvents() {
         { time: "5:30 PM", activity: "Closing Remarks" },
       ],
       speakers: [
-        { name: "Andrew Trung Musana", title: "Foundation Director", image: "/images/trung-musana.jpg" },
-        { name: "Raul Zihash", title: "Community and Outreach Director", image: "/images/team-3.jpg" },
-        { name: "Counsel Aisha", title: "Legal Advisor", image: "/female-lawyer.png" },
-        { name: "Ken Wandabusi", title: "Guest of Honor", image: "/male-dignitary.png" },
-        { name: "Leonard Ofono", title: "NGO Board Representative, Wakiso", image: "/placeholder.svg?key=xpc1n" },
+        { name: "Andrew Trung Musana", title: "Foundation Director" },
+        { name: "Raul Zihash", title: "Community and Outreach Director" },
+        { name: "Counsel Aisha", title: "Legal Advisor" },
+        { name: "Ken Wandabusi", title: "Guest of Honor" },
+        { name: "Leonard Ofono", title: "NGO Board Representative, Wakiso" },
       ],
       isPast: false,
     },
@@ -388,7 +386,7 @@ function getAllEvents() {
       location: "Various Locations",
       description:
         "Spread holiday joy to children in need through our annual Christmas activities program. This week-long initiative includes a Christmas party, home visits, games and activities, gift distribution, and hospital visits to pray for and support young patients.",
-      image: "/images/kids-muzungu.jpg",
+      image: "/images/childrens-christmas-activity.jpeg",
       capacity: "Open to all volunteers",
       additionalInfo:
         "Gift donations are welcome. Please contact our office to contribute gift boxes or supplies for the children's Christmas party.",
@@ -424,8 +422,8 @@ function getAllEvents() {
         { time: "5:30 PM", activity: "Closing Remarks" },
       ],
       speakers: [
-        { name: "Andrew Trung Musana", title: "Foundation Director", image: "/images/trung-musana.jpg" },
-        { name: "Raul Zihash", title: "General Secretary", image: "/placeholder.svg?key=0r9ho" },
+        { name: "Andrew Trung Musana", title: "Foundation Director" },
+        { name: "Raul Zihash", title: "General Secretary" },
       ],
       isPast: true,
     },

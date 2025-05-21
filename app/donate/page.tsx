@@ -328,7 +328,7 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* Donor Recognition 
+      {/* Donor Recognition */}
       <section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-4">Our Supporters</h2>
@@ -371,7 +371,7 @@ export default function DonatePage() {
             <Button variant="outline">View All Supporters</Button>
           </div>
         </div>
-      </section>*/}
+      </section>
 
       {/* FAQ */}
       <section className="py-16 px-4 md:px-6 bg-muted">

@@ -19,7 +19,7 @@ export default function ChristmasActivitiesPage() {
     location: "Various Locations",
     description:
       "Spread holiday joy to children in need through our annual Christmas activities program. This week-long initiative includes a Christmas party, home visits, games and activities, gift distribution, and hospital visits to pray for and support young patients. Join us in making this holiday season special for children who might otherwise miss out on the joy and magic of Christmas.",
-    image: "/images/kids-muzungu.jpg",
+    image: "images/childrenschristmas-activity.jpeg",
     capacity: "Open to all volunteers",
     additionalInfo:
       "Gift donations are welcome. Please contact our office to contribute gift boxes or supplies for the children's Christmas party. Volunteers can participate for the entire week or select specific days based on their availability.",
@@ -76,8 +76,8 @@ export default function ChristmasActivitiesPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src={event.image || "/placeholder.svg"}
-          alt={event.title}
+          src="/images/childrens-christmas-activvity.jpeg"
+          alt="Children's Christmas Activities"
           fill
           className="object-cover brightness-[0.7]"
           priority
@@ -327,36 +327,46 @@ export default function ChristmasActivitiesPage() {
       </section>
 
       {/* Photo Gallery */}
-      <section className="py-16 px-4 md:px-6 bg-white">
+     {/* <section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-8">Memories from Previous Years</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="relative h-40 md:h-60 rounded-lg overflow-hidden">
-              <Image src="/placeholder.svg?key=or9ja" alt="Children opening gifts" fill className="object-cover" />
-            </div>
-            <div className="relative h-40 md:h-60 rounded-lg overflow-hidden">
-              <Image src="/placeholder.svg?key=zbrof" alt="Christmas party" fill className="object-cover" />
-            </div>
-            <div className="relative h-40 md:h-60 rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=240&width=320&query=volunteers with children at christmas"
-                alt="Volunteers with children"
+                src="/images/christmas-party.jpeg"
+                alt="Children's Christmas Activities"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="relative h-40 md:h-60 rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=240&width=320&query=hospital visit at christmas"
-                alt="Hospital visit"
+                src="/images/christmas-party.jpeg"
+                alt="Children's Christmas Activities"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-40 md:h-60 rounded-lg overflow-hidden">
+              <Image
+                src="/images/christmas-party.jpeg"
+                alt="Children's Christmas Activities"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-40 md:h-60 rounded-lg overflow-hidden">
+              <Image
+                src="/images/christmas-party.jpeg"
+                alt="Children's Christmas Activities"
                 fill
                 className="object-cover"
               />
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* CTA */}
       <section className="py-16 px-4 md:px-6 bg-primary text-primary-foreground">

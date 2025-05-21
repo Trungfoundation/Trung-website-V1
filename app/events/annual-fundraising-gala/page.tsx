@@ -32,7 +32,7 @@ export default function AnnualFundraisingGalaPage() {
     ],
     speakers: [
       { name: "Mr. Andrew Trung Musana", title: "Executive Director", image: "/images/trung-musana.jpg" },
-      { name: "Mr. Raul Zihash", title: "Community and Outreach Director", image: "/images/team-3.jpg" },
+      { name: "Mr. Raul Zihash", title: "Community and Outreach Director", image: "/images/raul-zihash-portrait.jpeg" }
     ],
     isPast: false,
     ticketOptions: [
@@ -89,7 +89,7 @@ export default function AnnualFundraisingGalaPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src={event.image || "/placeholder.svg"}
+          src="/images/volunteer-and-women.jpg"
           alt={event.title}
           fill
           className="object-cover brightness-[0.7]"
@@ -317,7 +317,7 @@ export default function AnnualFundraisingGalaPage() {
       </section>
 
       {/* Silent Auction Preview */}
-      <section className="py-16 px-4 md:px-6 bg-white">
+      {/*<section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-8">Silent Auction Preview</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -348,7 +348,7 @@ export default function AnnualFundraisingGalaPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* CTA */}
       <section className="py-16 px-4 md:px-6 bg-primary text-primary-foreground">

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Calendar, MapPin, Users, Home, CheckCircle2 } from "lucide-react"
+import { ArrowRight, Calendar, MapPin, Users, Home } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -12,7 +12,7 @@ export default function CommunityCentersPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/training-seminar-1.jpg"
+          src="/images/community-centers.jpeg"
           alt="Community Centers Program"
           fill
           className="object-cover brightness-[0.7]"

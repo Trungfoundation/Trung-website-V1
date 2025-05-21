@@ -1,29 +1,13 @@
 import Image from "next/image"
-import { ArrowRight, Award, Calendar, Clock, Heart, Users } from "lucide-react"
+import { ArrowRight, Award, Calendar, Clock, Heart, Users, Mail, Linkedin } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import TeamMember from "@/components/team-member"
 
 export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <section className="relative w-full h-[300px] md:h-[400px]">
-        <Image
-          src="/images/causes-3.jpg"
-          alt="About Our Foundation"
-          fill
-          className="object-cover brightness-[0.7]"
-          priority
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">About Our Foundation</h1>
-          <p className="text-xl text-white max-w-2xl">Who we are.</p>
-        </div>
-      </section>
-
       {/* Our Story */}
       <section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
@@ -50,15 +34,27 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="md:w-1/2 flex justify-center items-center p-4">
-              <div className="relative h-[300px] w-[300px]">
-                <Image
-                  src="/trung_logo.png"
-                  alt=""
-                  width={300}
-  height={300}
-                  className="object-contain"
-                  priority
-                />
+              <div className="relative h-[300px] w-[300px] flex items-center justify-center">
+                <div className="w-64 h-64 bg-primary/10 rounded-full flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/trung_logo.svg"
+                    alt="Trung Foundation Logo"
+                    width={200}
+                    height={200}
+                    className="object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.style.display = "none"
+                      const parent = target.parentElement
+                      if (parent) {
+                        const fallback = document.createElement("div")
+                        fallback.className = "w-full h-full flex items-center justify-center"
+                        fallback.innerHTML = '<span class="text-3xl font-bold text-primary">Trung Foundation</span>'
+                        parent.appendChild(fallback)
+                      }
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -226,233 +222,299 @@ export default function AboutPage() {
               </TabsList>
             </div>
             <TabsContent value="leadership">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <TeamMember
-                  name="Andrew Trung Musana "
-                  title="Executive Director"
-                  bio="Mr. Andrew Trung has over 8 years of experience in non-profit leadership and international development."
-                  image="/images/trung-musana.jpg"
-                />
-                <TeamMember
-                  name="Counsel Aisha Nakisinje"
-                  title="Legal Advisor"
-                  bio="Counsel Aisha oversees all Legal programs ensuring alignment with legal obligations/requirements."
-                  image="/images/counsel-aisha-nakisinje.jpg"
-
-                />
-                <TeamMember
-                  name="Mr. Ken Wandabusi"
-                  title="Patron"
-                  bio="Mr Wandabusi provides oversight and guidance to ensure all programs operate within the bounds of the organizations strategic intent"
-                  image="/images/ken-wandabusi.jpg"
-                />
-              </div>
-              {/*
-
-            </TabsContent>
-            <TabsContent value="board">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <TeamMember
-                  name="Michael Chen"
-                  title="Board Chair"
-                  bio="Michael brings extensive experience in corporate leadership and strategic planning."
-                  image="/images/team-1.jpg"
-                />
-                <TeamMember
-                  name="Dr. Amara Okafor"
-                  title="Board Treasurer"
-                  bio="Dr. Okafor is a financial expert with a passion for sustainable development."
-                  image="/images/team-4.jpg"
-                />
-                <TeamMember
-                  name="Robert Garcia"
-                  title="Board Secretary"
-                  bio="Robert has dedicated his career to community development and education reform."
-                  image="/images/team-2.jpg"
-                />
-                <TeamMember
-                  name="Lisa Wong"
-                  title="Board Member"
-                  bio="Lisa is a healthcare executive committed to improving access to quality care."
-                  image="/images/team-3.jpg"
-                />
-                <TeamMember
-                  name="James Wilson"
-                  title="Board Member"
-                  bio="James brings expertise in technology and innovation to support our digital initiatives."
-                  image="/images/team-5.jpg"
-                />
-                <TeamMember
-                  name="Elena Rodriguez"
-                  title="Board Member"
-                  bio="Elena is an advocate for women's empowerment and educational equity."
-                  image="/images/team-6.jpg"
-                />
-              </div>
-            </TabsContent>
-            <TabsContent value="staff">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <TeamMember
-                  name="Asaph"
-                  title="From our Programs"
-                  bio="We believe that the world will be driven to sustainable living when education initiatives across multiple communities are embraced."
-                  image="/images/team-2.jpg"
-                  compact
-                />
-                <TeamMember
-                  name="Maria Santos"
-                  title="In Healthcare"
-                  bio="Our healthcare access programs and community health workshops have brought health sensitization to lots of marginalized communities."
-                  image="/images/team-4.jpg"
-                  compact
-                />
-                <TeamMember
-                  name="Thomas Nguyen"
-                  title="Finance Manager"
-                  bio="Thomas ensures financial transparency and efficient resource allocation."
-                  image="/images/team-5.jpg"
-                  compact
-                />
-                <TeamMember
-                  name="Aisha Patel"
-                  title="Communications Specialist"
-                  bio="Aisha manages our digital presence and storytelling initiatives."
-                  image="/images/team-3.jpg"
-                  compact
-                />
-                <TeamMember
-                  name="Carlos Mendez"
-                  title="Community Outreach"
-                  bio="Carlos builds relationships with local partners and community leaders."
-                  image="/images/team-6.jpg"
-                  compact
-                />
-                <TeamMember
-                  name="Grace Lee"
-                  title="Volunteer Coordinator"
-                  bio="Grace manages our volunteer program and community engagement events."
-                  image="/images/team-4.jpg"
-                  compact
-                />
-                <TeamMember
-                  name="Omar Hassan"
-                  title="Monitoring & Evaluation"
-                  bio="Omar tracks program outcomes and impact to ensure effectiveness."
-                  image="/images/team-1.jpg"
-                  compact
-                />
-                <TeamMember
-                  name="Priya Sharma"
-                  title="Grant Writer"
-                  bio="Priya secures funding through grants and institutional partnerships."
-                  image="/images/team-3.jpg"
-                  compact
-                />
+                <Card className="overflow-hidden h-full">
+                  <div className="p-6 text-center">
+                    <div className="w-32 h-32 mx-auto mb-4 overflow-hidden">
+                      <Image
+                        src="/images/trung-musana.jpg"
+                        alt="Andrew Trung Musana"
+                        width={128}
+                        height={128}
+                        className="object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.style.display = "none"
+                          const parent = target.parentElement
+                          if (parent) {
+                            const fallback = document.createElement("div")
+                            fallback.className =
+                              "w-full h-full bg-primary/10 rounded-full flex items-center justify-center"
+                            fallback.innerHTML = '<span class="text-primary text-xl">ATM</span>'
+                            parent.appendChild(fallback)
+                          }
+                        }}
+                      />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Andrew Trung Musana</h3>
+                    <p className="text-primary mb-2">Executive Director</p>
+                    <p className="text-muted-foreground mb-4">
+                      Mr. Andrew Trung has over 8 years of experience in non-profit leadership and international
+                      development.
+                    </p>
+                    <div className="flex gap-2 justify-center">
+                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                        <Mail size={16} />
+                        <span className="sr-only">Email Andrew Trung Musana</span>
+                      </Button>
+                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                        <Linkedin size={16} />
+                        <span className="sr-only">Andrew Trung Musana's LinkedIn</span>
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="overflow-hidden h-full">
+                  <div className="p-6 text-center">
+                    <div className="w-32 h-32 mx-auto mb-4 overflow-hidden">
+                      <Image
+                        src="/images/counsel-aisha-nakisinje.jpeg"
+                        alt="Counsel Aisha Nakisinje"
+                        width={128}
+                        height={128}
+                        className="object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.style.display = "none"
+                          const parent = target.parentElement
+                          if (parent) {
+                            const fallback = document.createElement("div")
+                            fallback.className =
+                              "w-full h-full bg-primary/10 rounded-full flex items-center justify-center"
+                            fallback.innerHTML = '<span class="text-primary text-xl">AN</span>'
+                            parent.appendChild(fallback)
+                          }
+                        }}
+                      />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Counsel Aisha Nakisinje</h3>
+                    <p className="text-primary mb-2">Legal Advisor</p>
+                    <p className="text-muted-foreground mb-4">
+                      Counsel Aisha oversees all Legal programs ensuring alignment with legal obligations/requirements.
+                    </p>
+                    <div className="flex gap-2 justify-center">
+                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                        <Mail size={16} />
+                        <span className="sr-only">Email Counsel Aisha Nakisinje</span>
+                      </Button>
+                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                        <Linkedin size={16} />
+                        <span className="sr-only">Counsel Aisha Nakisinje's LinkedIn</span>
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="overflow-hidden h-full">
+                  <div className="p-6 text-center">
+                    <div className="w-32 h-32 mx-auto mb-4 overflow-hidden">
+                      <Image
+                        src="/images/ken-wandabusi-portrait.jpeg"
+                        alt="Mr. Ken Wandabusi"
+                        width={128}
+                        height={128}
+                        className="object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.style.display = "none"
+                          const parent = target.parentElement
+                          if (parent) {
+                            const fallback = document.createElement("div")
+                            fallback.className =
+                              "w-full h-full bg-primary/10 rounded-full flex items-center justify-center"
+                            fallback.innerHTML = '<span class="text-primary text-xl">KW</span>'
+                            parent.appendChild(fallback)
+                          }
+                        }}
+                      />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Mr. Ken Wandabusi</h3>
+                    <p className="text-primary mb-2">Patron</p>
+                    <p className="text-muted-foreground mb-4">
+                      Mr Wandabusi provides oversight and guidance to ensure all programs operate within the bounds of
+                      the organizations strategic intent.
+                    </p>
+                    <div className="flex gap-2 justify-center">
+                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                        <Mail size={16} />
+                        <span className="sr-only">Email Mr. Ken Wandabusi</span>
+                      </Button>
+                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                        <Linkedin size={16} />
+                        <span className="sr-only">Mr. Ken Wandabusi's LinkedIn</span>
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="overflow-hidden h-full">
+                  <div className="p-6 text-center">
+                    <div className="w-32 h-32 mx-auto mb-4 overflow-hidden">
+                      <Image
+                        src="/images/raul-zihash-portrait.jpeg"
+                        alt="Raul Zihash"
+                        width={128}
+                        height={128}
+                        className="object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.style.display = "none"
+                          const parent = target.parentElement
+                          if (parent) {
+                            const fallback = document.createElement("div")
+                            fallback.className =
+                              "w-full h-full bg-primary/10 rounded-full flex items-center justify-center"
+                            fallback.innerHTML = '<span class="text-primary text-xl">RZ</span>'
+                            parent.appendChild(fallback)
+                          }
+                        }}
+                      />
+                    </div>
+                    <h3 className="font-bold text-xl mb-1">Raul Zihash</h3>
+                    <p className="text-primary mb-2">General Secretary</p>
+                    <p className="text-muted-foreground mb-4">
+                      Raul coordinates administrative functions and ensures effective communication across all
+                      departments.
+                    </p>
+                    <div className="flex gap-2 justify-center">
+                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                        <Mail size={16} />
+                        <span className="sr-only">Email Raul Zihash</span>
+                      </Button>
+                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                        <Linkedin size={16} />
+                        <span className="sr-only">Raul Zihash's LinkedIn</span>
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
               </div>
-            </TabsContent>*/}
             </TabsContent>
           </Tabs>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 px-4 md:px-6 bg-primary text-primary-foreground">
-        <div className="container mx-auto max-w-6xl text-center">
-          <h2 className="text-3xl font-bold mb-4">Join Our Mission</h2>
-          <p className="text-x max-w-2xl mx-auto mb-8">
-            Together, we can create lasting change in communities that need it most.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg">
-              Donate Now
-            </Button>
-            <Button variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white/10">
-              Get Involved
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Legal & Governance */}
+      {/* Leadership Committee */}
       <section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-4">Legal & Governance</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-            Our foundation is registered as a company limited by guarantee, ensuring proper governance and
-            accountability.
+          <h2 className="text-3xl font-bold text-center mb-4">Leadership Committee</h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
+            Our dedicated leadership committee guides our foundation's strategic direction and ensures we fulfill our
+            mission.
           </p>
 
+          <div className="bg-muted p-6 rounded-lg mb-8">
+            <div className="relative w-full h-auto rounded-lg overflow-hidden">
+              <Image
+                src="/images/leadership-committee.jpeg"
+                alt="Trung Foundation Leadership Committee"
+                width={1200}
+                height={600}
+                className="object-contain w-full"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.style.display = "none"
+                  const parent = target.parentElement
+                  if (parent) {
+                    const fallback = document.createElement("div")
+                    fallback.className = "w-full h-[300px] bg-primary/10 flex items-center justify-center"
+                    fallback.innerHTML = '<p class="text-center text-muted-foreground">Leadership Committee Photo</p>'
+                    parent.appendChild(fallback)
+                  }
+                }}
+              />
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-6">
-              <h3 className="text-xl font-bold mb-4">Legal Structure</h3>
-              <div className="space-y-3 text-muted-foreground">
-                <p>Our foundation is registered as a non-profit organization in Uganda</p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Limited liability protection for our board members and trustees</li>
-                  <li>A clear governance framework with defined roles and responsibilities</li>
-                  <li>Transparency in financial management and reporting</li>
-                  <li>Compliance with all relevant regulatory requirements</li>
-                </ul>
-                <p>Registration Number: 12345678</p>
-                <p>Tax Exemption Status: 501(c)(3) equivalent</p>
-              </div>
-              {/* <div className="mt-6">
-               <Button variant="outline">View Registration Documents</Button>
-              </div>*/}
-            </Card>
-            {/*<Card className="p-6">
-              <h3 className="text-xl font-bold mb-4">Governance Documents</h3>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between border-b pb-3">
-                  <div>
-                    <h4 className="font-semibold">Articles of Incorporation</h4>
-                    <p className="text-sm text-muted-foreground">Last updated: January 2022</p>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Executive Committee</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <Users size={16} />
                   </div>
-                  <Button variant="outline" size="sm">
-                    Download
-                  </Button>
-                </div>
-                <div className="flex items-center justify-between border-b pb-3">
                   <div>
-                    <h4 className="font-semibold">Bylaws</h4>
-                    <p className="text-sm text-muted-foreground">Last updated: March 2023</p>
+                    <p className="font-medium">Andrew Trung Musana</p>
+                    <p className="text-sm text-muted-foreground">Executive Director</p>
                   </div>
-                  <Button variant="outline" size="sm">
-                    Download
-                  </Button>
-                </div>
-                <div className="flex items-center justify-between border-b pb-3">
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <Users size={16} />
+                  </div>
                   <div>
-                    <h4 className="font-semibold">Board Policies</h4>
-                    <p className="text-sm text-muted-foreground">Last updated: September 2023</p>
+                    <p className="font-medium">Counsel Aisha Nakisinje</p>
+                    <p className="text-sm text-muted-foreground">Legal Advisor</p>
                   </div>
-                  <Button variant="outline" size="sm">
-                    Download
-                  </Button>
-                </div>
-                <div className="flex items-center justify-between border-b pb-3">
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <Users size={16} />
+                  </div>
                   <div>
-                    <h4 className="font-semibold">Code of Ethics</h4>
-                    <p className="text-sm text-muted-foreground">Last updated: June 2023</p>
+                    <p className="font-medium">Mr. Ken Wandabusi</p>
+                    <p className="text-sm text-muted-foreground">Patron</p>
                   </div>
-                  <Button variant="outline" size="sm">
-                    Download
-                  </Button>
-                </div>
-                <div className="flex items-center justify-between">
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <Users size={16} />
+                  </div>
                   <div>
-                    <h4 className="font-semibold">Annual Reports</h4>
-                    <p className="text-sm text-muted-foreground">2020-2023 available</p>
+                    <p className="font-medium">Raul Zihash</p>
+                    <p className="text-sm text-muted-foreground">General Secretary</p>
                   </div>
-                  <Button variant="outline" size="sm">
-                    View All
-                  </Button>
-                </div>
-              </div>
-            </Card>*/}
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Program Directors</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <Users size={16} />
+                  </div>
+                  <div>
+                    <p className="font-medium">Kusiima Keryn Precious</p>
+                    <p className="text-sm text-muted-foreground">Treasurer</p>
+                  </div>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <Users size={16} />
+                  </div>
+                  <div>
+                    <p className="font-medium">Femh Shero</p>
+                    <p className="text-sm text-muted-foreground">Media coordinator</p>
+                  </div>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <Users size={16} />
+                  </div>
+                  <div>
+                    <p className="font-medium">Dr Chaka Barasa</p>
+                    <p className="text-sm text-muted-foreground">Health Overseer</p>
+                  </div>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <Users size={16} />
+                  </div>
+                  <div>
+                    <p className="font-medium">Prossy Wandabusi</p>
+                    <p className="text-sm text-muted-foreground">Women's Counselor</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
+
+     
     </main>
   )
 }

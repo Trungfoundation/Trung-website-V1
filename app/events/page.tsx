@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Calendar, Clock, MapPin, Search } from "lucide-react"
@@ -28,13 +27,7 @@ export default function EventsPage() {
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
-        <Image
-          src="/images/events-coming-soon.jpg"
-          alt="Foundation Events"
-          fill
-          className="object-cover brightness-[0.7]"
-          priority
-        />
+        <Image src="/images/events.jpg" alt="Foundation Events" fill className="object-cover" priority />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Events & Activities</h1>
           <p className="text-xl text-white max-w-2xl">
@@ -159,7 +152,7 @@ export default function EventsPage() {
                     date="May 18, 2025"
                     time="11:00 AM - 6:00 PM"
                     location="Fairway Hotel, Kampala"
-                    image="/images/workshop-1.jpg"
+                    image="/images/foundation-general-meeting-flyer.jpeg"
                     type="Meeting"
                     slug="foundation-general-meeting"
                   />
@@ -170,7 +163,7 @@ export default function EventsPage() {
                     date="June 25-30, 2025"
                     time="All Day"
                     location="Mbale, Uganda"
-                    image="/images/community-aid-distribution.jpg"
+                    image="/images/field-work-mbale.jpeg"
                     type="Outreach"
                     slug="field-work-mbale"
                   />
@@ -181,7 +174,7 @@ export default function EventsPage() {
                     date="December 10-15, 2025"
                     time="9:00 AM - 5:00 PM"
                     location="Various Locations"
-                    image="/images/kids-muzungu.jpg"
+                    image="/images/childrens-christmas-activity.jpeg"
                     type="Holiday"
                     slug="childrens-christmas-activities"
                   />
@@ -196,8 +189,8 @@ export default function EventsPage() {
                     <div className="flex flex-col">
                       <div className="relative h-[400px]">
                         <Image
-                          src="/images/pre-general-meeting-flier.png"
-                          alt="Pre-General Meeting Flier"
+                          src="/images/first-general-meeting-flyer.jpeg"
+                          alt="First General Meeting Flyer"
                           fill
                           className="object-contain bg-white"
                         />
@@ -342,7 +335,7 @@ function EventCard({ title, description, date, time, location, image, type, slug
           src={image || "/placeholder.svg"}
           alt={title}
           fill
-          className={`object-cover ${isPast ? "grayscale" : ""}`}
+          className={`object-contain bg-white ${isPast ? "grayscale" : ""}`}
         />
         <div className="absolute top-3 left-3">
           <Badge
@@ -407,7 +400,7 @@ function EventCard({ title, description, date, time, location, image, type, slug
     </Card>
   )
 }
-;
+;("use client")
 
 function EventCalendar() {
   const [currentDate, setCurrentDate] = useState(new Date(2025, 4, 1)) // May 2025

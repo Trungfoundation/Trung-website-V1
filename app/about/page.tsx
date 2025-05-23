@@ -42,17 +42,6 @@ export default function AboutPage() {
                     width={200}
                     height={200}
                     className="object-contain"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.style.display = "none"
-                      const parent = target.parentElement
-                      if (parent) {
-                        const fallback = document.createElement("div")
-                        fallback.className = "w-full h-full flex items-center justify-center"
-                        fallback.innerHTML = '<span class="text-3xl font-bold text-primary">Trung Foundation</span>'
-                        parent.appendChild(fallback)
-                      }
-                    }}
                   />
                 </div>
               </div>
@@ -232,18 +221,6 @@ export default function AboutPage() {
                         width={128}
                         height={128}
                         className="object-contain"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement
-                          target.style.display = "none"
-                          const parent = target.parentElement
-                          if (parent) {
-                            const fallback = document.createElement("div")
-                            fallback.className =
-                              "w-full h-full bg-primary/10 rounded-full flex items-center justify-center"
-                            fallback.innerHTML = '<span class="text-primary text-xl">ATM</span>'
-                            parent.appendChild(fallback)
-                          }
-                        }}
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Andrew Trung Musana</h3>
@@ -274,18 +251,6 @@ export default function AboutPage() {
                         width={128}
                         height={128}
                         className="object-contain"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement
-                          target.style.display = "none"
-                          const parent = target.parentElement
-                          if (parent) {
-                            const fallback = document.createElement("div")
-                            fallback.className =
-                              "w-full h-full bg-primary/10 rounded-full flex items-center justify-center"
-                            fallback.innerHTML = '<span class="text-primary text-xl">AN</span>'
-                            parent.appendChild(fallback)
-                          }
-                        }}
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Counsel Aisha Nakisinje</h3>
@@ -315,18 +280,6 @@ export default function AboutPage() {
                         width={128}
                         height={128}
                         className="object-contain"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement
-                          target.style.display = "none"
-                          const parent = target.parentElement
-                          if (parent) {
-                            const fallback = document.createElement("div")
-                            fallback.className =
-                              "w-full h-full bg-primary/10 rounded-full flex items-center justify-center"
-                            fallback.innerHTML = '<span class="text-primary text-xl">KW</span>'
-                            parent.appendChild(fallback)
-                          }
-                        }}
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Mr. Ken Wandabusi</h3>
@@ -357,18 +310,6 @@ export default function AboutPage() {
                         width={128}
                         height={128}
                         className="object-contain"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement
-                          target.style.display = "none"
-                          const parent = target.parentElement
-                          if (parent) {
-                            const fallback = document.createElement("div")
-                            fallback.className =
-                              "w-full h-full bg-primary/10 rounded-full flex items-center justify-center"
-                            fallback.innerHTML = '<span class="text-primary text-xl">RZ</span>'
-                            parent.appendChild(fallback)
-                          }
-                        }}
                       />
                     </div>
                     <h3 className="font-bold text-xl mb-1">Raul Zihash</h3>
@@ -412,17 +353,6 @@ export default function AboutPage() {
                 width={1200}
                 height={600}
                 className="object-contain w-full"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.style.display = "none"
-                  const parent = target.parentElement
-                  if (parent) {
-                    const fallback = document.createElement("div")
-                    fallback.className = "w-full h-[300px] bg-primary/10 flex items-center justify-center"
-                    fallback.innerHTML = '<p class="text-center text-muted-foreground">Leadership Committee Photo</p>'
-                    parent.appendChild(fallback)
-                  }
-                }}
               />
             </div>
           </div>
@@ -513,8 +443,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-     
     </main>
   )
 }

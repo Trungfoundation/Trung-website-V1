@@ -18,10 +18,6 @@ export default function ContactPage() {
           fill
           className="object-cover object-top brightness-[0.7]"
           priority
-          onError={(e) => {
-            const target = e.target as HTMLImageElement
-            target.src = "/placeholder.svg?height=400&width=800&text=Contact+Us"
-          }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
@@ -141,10 +137,6 @@ export default function ContactPage() {
                 alt="Healthcare Volunteers and Professionals"
                 fill
                 className="object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement
-                  target.src = "/placeholder.svg?height=320&width=480&text=Healthcare+Team"
-                }}
               />
             </div>
             <div>

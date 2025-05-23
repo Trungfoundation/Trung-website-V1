@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import Image from "next/image"
-import { ArrowRight, Calendar, CheckCircle, DollarSign, Heart, Users } from "lucide-react"
+import { DollarSign, Heart, Users } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -99,7 +99,7 @@ export default function DonatePage() {
           src="/trung_logo.png"
           alt="Support Our Mission"
           fill
-          className="object-cover brightness-[0.7]"
+          className="object-cover brightness-[0.7] zoom-animation"
           priority
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">

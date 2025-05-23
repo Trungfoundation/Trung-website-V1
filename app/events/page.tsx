@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Calendar, Clock, MapPin, Search } from "lucide-react"
@@ -400,7 +402,6 @@ function EventCard({ title, description, date, time, location, image, type, slug
     </Card>
   )
 }
-;("use client")
 
 function EventCalendar() {
   const [currentDate, setCurrentDate] = useState(new Date(2025, 4, 1)) // May 2025

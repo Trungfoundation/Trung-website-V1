@@ -13,10 +13,10 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/healthcare-volunteers.jpeg"
-          alt="Contact Us - Healthcare Volunteers"
+          src="/images/we-give-our-best.jpg"
+          alt="Contact Us - We Give Our Best"
           fill
-          className="object-cover brightness-[0.7]"
+          className="object-cover object-top brightness-[0.7]"
           priority
           onError={(e) => {
             const target = e.target as HTMLImageElement

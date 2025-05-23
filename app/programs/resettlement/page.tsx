@@ -1,17 +1,15 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Heart, Home, Building, Users } from "lucide-react"
+import { CheckCircle, Heart, Home, Building, Users } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
 
 export default function ResettlementPage() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[300px] md:h-[400px]">
+      {/*<section className="relative w-full h-[300px] md:h-[400px]">
         <Image
           src="/images/services-3.jpg"
           alt="Resettlement Programs"
@@ -25,7 +23,7 @@ export default function ResettlementPage() {
             Building homes and rebuilding lives for vulnerable families and communities
           </p>
         </div>
-      </section>
+      </section>*/}
 
       {/* Program Overview */}
       <section className="py-16 px-4 md:px-6 bg-white">
@@ -71,7 +69,7 @@ export default function ResettlementPage() {
             </div>
             <div className="md:w-1/2">
               <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                <Image src="/images/bg_3.jpg" alt="New home construction" fill className="object-cover" />
+                <Image src="/trung_logo.png" alt="New home construction" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -91,11 +89,11 @@ export default function ResettlementPage() {
             </TabsList>
 
             <TabsContent value="housing">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/services-3.jpg" alt="Housing Construction" fill className="object-cover" />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Housing Construction Program</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -130,8 +128,8 @@ export default function ResettlementPage() {
             </TabsContent>
 
             <TabsContent value="community">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Community Development Program</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -162,23 +160,23 @@ export default function ResettlementPage() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
                     src="/images/training-seminar-1.jpg"
                     alt="Community Development"
                     fill
                     className="object-cover"
                   />
-                </div>
+                </div> */}
               </div>
             </TabsContent>
 
             <TabsContent value="livelihood">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/workshop-1.jpg" alt="Livelihood Support" fill className="object-cover" />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Livelihood Support Program</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -317,7 +315,7 @@ export default function ResettlementPage() {
               <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Home className="text-primary" size={28} />
               </div>
-              <div className="text-4xl font-bold mb-2">75+</div>
+              <div className="text-4xl font-bold mb-2">2+</div>
               <div className="text-muted-foreground">Homes Built</div>
             </div>
 
@@ -325,7 +323,7 @@ export default function ResettlementPage() {
               <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Users className="text-primary" size={28} />
               </div>
-              <div className="text-4xl font-bold mb-2">420+</div>
+              <div className="text-4xl font-bold mb-2">3+</div>
               <div className="text-muted-foreground">People Housed</div>
             </div>
 
@@ -333,7 +331,7 @@ export default function ResettlementPage() {
               <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Building className="text-primary" size={28} />
               </div>
-              <div className="text-4xl font-bold mb-2">8</div>
+              <div className="text-4xl font-bold mb-2">0</div>
               <div className="text-muted-foreground">Community Facilities</div>
             </div>
 

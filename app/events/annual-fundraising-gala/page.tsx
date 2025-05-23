@@ -32,7 +32,7 @@ export default function AnnualFundraisingGalaPage() {
     ],
     speakers: [
       { name: "Mr. Andrew Trung Musana", title: "Executive Director", image: "/images/trung-musana.jpg" },
-      { name: "Mr. Raul Zihash", title: "Community and Outreach Director", image: "/images/raul-zihash-portrait.jpeg" }
+      { name: "Mr. Raul Zihash", title: "Community and Outreach Director", image: "/images/raul-zihash-portrait.jpeg" },
     ],
     isPast: false,
     ticketOptions: [

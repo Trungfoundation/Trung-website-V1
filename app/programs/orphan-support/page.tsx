@@ -9,13 +9,17 @@ export default function OrphanSupportPage() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[300px] md:h-[400px]">
+      {/*<section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/orphan-support.jpeg"
-          alt="Orphan Support Programs"
+          src="/images/orphan-support-meal.jpeg"
+          alt="Orphan Support Programs - Children sharing a meal"
           fill
           className="object-cover brightness-[0.7]"
           priority
+          onError={(e) => {
+            e.currentTarget.src = "/orphan-support.png"
+            e.currentTarget.srcset = ""
+          }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Orphan Support Program</h1>
@@ -23,7 +27,7 @@ export default function OrphanSupportPage() {
             Providing care, education, and a loving environment for vulnerable children
           </p>
         </div>
-      </section>
+      </section>*/}
 
       {/* Program Overview */}
       <section className="py-16 px-4 md:px-6 bg-white">
@@ -69,8 +73,17 @@ export default function OrphanSupportPage() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                <Image src="/images/education6.jpg" alt="Children in classroom" fill className="object-cover" />
+              <div className="relative h-[400px] w-full rounded-lg overflow-hidden bg-gray-100">
+                <Image
+                  src="/trung_logo.png"
+                  alt="Children sharing a meal together"
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "/placeholder.svg?height=400&width=600&query=children+sharing+meal"
+                    e.currentTarget.srcset = ""
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -90,11 +103,11 @@ export default function OrphanSupportPage() {
             </TabsList>
 
             <TabsContent value="education">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/school-improvement-1.jpg" alt="Education Support" fill className="object-cover" />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Educational Support Program</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -128,8 +141,8 @@ export default function OrphanSupportPage() {
             </TabsContent>
 
             <TabsContent value="health">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Health and Nutrition Program</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -159,18 +172,18 @@ export default function OrphanSupportPage() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/medical-camp-4.jpg" alt="Health and Nutrition" fill className="object-cover" />
-                </div>
+                </div> */}
               </div>
             </TabsContent>
 
             <TabsContent value="mentorship">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/volunteer-2.jpg" alt="Mentorship Program" fill className="object-cover" />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Mentorship and Life Skills Program</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>

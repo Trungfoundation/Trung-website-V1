@@ -15,7 +15,18 @@ export default function FeaturedProgram({ title, description, image, link }: Fea
   return (
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative h-48">
-        <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
+        <Image
+          src={
+            title.includes("Healthcare Access") ? "/images/healthcare-access-clinic.jpeg" : image || "/placeholder.svg"
+          }
+          alt={title}
+          fill
+          className="object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.src = "/placeholder.svg?height=200&width=400&query=" + encodeURIComponent(title)
+          }}
+        />
       </div>
       <CardContent className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-bold mb-2">{title}</h3>

@@ -19,6 +19,9 @@ export default function ProgramsPage() {
           fill
           className="object-cover brightness-[0.7]"
           priority
+          onError={(e) => {
+            e.currentTarget.src = "/programs.png"
+          }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Programs & Initiatives</h1>
@@ -92,7 +95,7 @@ export default function ProgramsPage() {
                   title="Samaritan Packages"
                   category="Basic Needs"
                   description="Providing essential supplies and basic needs to vulnerable families and individuals."
-                  image="/images/causes-2.jpg"
+                  image="/images/food-security-packaging.jpeg"
                   status="Active"
                   icon={<Gift className="h-5 w-5" />}
                 />
@@ -221,185 +224,6 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* Featured Programs */}
-      <section className="py-16 px-4 md:px-6 bg-muted">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Featured Programs</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card className="overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/kids-muzungu.jpg" alt="Orphan Support" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <Badge className="mb-2">Featured Program</Badge>
-                <h3 className="text-xl font-bold mb-2">Orphan Support Program</h3>
-                <p className="text-muted-foreground mb-4">
-                  Our Orphan Support Program provides comprehensive care for vulnerable children, including education,
-                  healthcare, nutrition, and emotional support. We create loving environments where orphaned children
-                  can grow, learn, and develop their full potential.
-                </p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">350+ Children Supported</div>
-                    <div className="text-sm text-muted-foreground">Across 8 Communities</div>
-                  </div>
-                  <Link href="/programs/orphan-support">
-                    <Button>
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/services-3.jpg" alt="Resettlement Program" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <Badge className="mb-2">Featured Program</Badge>
-                <h3 className="text-xl font-bold mb-2">Resettlement Program</h3>
-                <p className="text-muted-foreground mb-4">
-                  Our Resettlement Program builds safe, dignified homes for vulnerable families who have been displaced
-                  or are living in inadequate conditions. Beyond housing, we provide community infrastructure,
-                  livelihood support, and essential services.
-                </p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">75+ Homes Built</div>
-                    <div className="text-sm text-muted-foreground">For 420+ People</div>
-                  </div>
-                  <Link href="/programs/resettlement">
-                    <Button>
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/education5.jpg" alt="Girl Child Empowerment" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <Badge className="mb-2">Featured Program</Badge>
-                <h3 className="text-xl font-bold mb-2">Girl Child Empowerment</h3>
-                <p className="text-muted-foreground mb-4">
-                  Our Girl Child Empowerment Program focuses on breaking down barriers that prevent girls from reaching
-                  their full potential. Through education, skills training, and leadership development, we empower girls
-                  to shape their own futures.
-                </p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">450+ Girls in School</div>
-                    <div className="text-sm text-muted-foreground">280+ Vocational Graduates</div>
-                  </div>
-                  <Link href="/programs/girl-empowerment">
-                    <Button>
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/causes-2.jpg" alt="Samaritan Packages" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <Badge className="mb-2">Featured Program</Badge>
-                <h3 className="text-xl font-bold mb-2">Samaritan Packages</h3>
-                <p className="text-muted-foreground mb-4">
-                  Our Samaritan Packages Program provides essential supplies to vulnerable families and individuals,
-                  including food, clean water, hygiene products, clothing, and household items. We address immediate
-                  needs while working toward long-term solutions.
-                </p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">5,200+ Packages Distributed</div>
-                    <div className="text-sm text-muted-foreground">To 850+ Families</div>
-                  </div>
-                  <Link href="/programs/samaritan-packages">
-                    <Button>
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stories 
-      <section className="py-16 px-4 md:px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-4">Impact Stories</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-            Real stories of transformation from the communities we serve
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/school-improvement-1.jpg" alt="Maria's Story" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <Badge className="mb-2">Education</Badge>
-                <h3 className="text-xl font-bold mb-2">Maria's Journey to College</h3>
-                <p className="text-muted-foreground mb-4">
-                  "The scholarship program changed my life. I'm the first in my family to attend college, and now I'm
-                  studying to become a teacher so I can give back to my community."
-                </p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">Maria Garcia</div>
-                    <div className="text-sm text-muted-foreground">Scholarship Recipient</div>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    Read Full Story
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/medical-camp-3.jpg" alt="Community Health Program" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <Badge className="mb-2">Healthcare</Badge>
-                <h3 className="text-xl font-bold mb-2">Transforming Village Healthcare</h3>
-                <p className="text-muted-foreground mb-4">
-                  "Our village now has trained health workers who can provide basic care and education. Maternal health
-                  has improved dramatically, and preventable diseases are down by 60%."
-                </p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">Dr. James Okonkwo</div>
-                    <div className="text-sm text-muted-foreground">Program Director</div>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    Read Full Story
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-8">
-            <Button>
-              View All Stories <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </section>*/}
-
       {/* Program Map */}
       <section className="py-16 px-4 md:px-6 bg-muted">
         <div className="container mx-auto max-w-6xl">
@@ -422,7 +246,15 @@ export default function ProgramsPage() {
             </div>
             <div className="w-full md:w-1/2">
               <div className="relative h-[300px] sm:h-[350px] md:h-[400px] w-full rounded-lg overflow-hidden border">
-                <Image src="/images/where-we-work.jpeg" alt="Program Locations Map" fill className="object-cover" />
+                <Image
+                  src="/images/where-we-work.jpeg"
+                  alt="Program Locations Map"
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "/placeholder.svg?height=400&width=600&query=map+of+program+locations"
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -484,8 +316,16 @@ function ProgramCard({ title, category, description, image, status, icon }: Prog
 
   return (
     <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-lg border-t-4 border-t-primary/70">
-      <div className="relative h-48">
-        <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
+      <div className="relative h-48 bg-gray-100">
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={title}
+          fill
+          className="object-cover"
+          onError={(e) => {
+            e.currentTarget.src = `/placeholder.svg?height=192&width=384&query=${encodeURIComponent(title)}`
+          }}
+        />
         <div className="absolute top-3 left-3">
           <Badge variant="secondary" className="flex items-center gap-1 shadow-sm">
             {icon}

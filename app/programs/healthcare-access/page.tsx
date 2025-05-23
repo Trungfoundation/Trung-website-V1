@@ -1,10 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Calendar, MapPin, Users, Heart } from "lucide-react"
+import { ArrowRight, CheckCircle, Heart, BookOpen, Users } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function HealthcareAccessPage() {
   return (
@@ -12,253 +11,385 @@ export default function HealthcareAccessPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/healthcare-access.jpeg"
-          alt="Healthcare Access Program"
+          src="/images/mobile-health-clinic.jpeg"
+          alt="Healthcare Access Programs"
           fill
           className="object-cover brightness-[0.7]"
           priority
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.src = "/healthcare-abstract.png"
+          }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-          <Badge className="mb-4 bg-primary/90 hover:bg-primary text-white">Healthcare Program</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Healthcare Access Program</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Healthcare Access Programs</h1>
           <p className="text-xl text-white max-w-2xl">
-            Improving access to essential healthcare services and preventive care
+            Bringing essential healthcare services to underserved communities
           </p>
         </div>
       </section>
 
       {/* Program Overview */}
       <section className="py-16 px-4 md:px-6 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Calendar className="h-6 w-6 text-primary" />
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-bold mb-6">Our Approach to Healthcare Access</h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  The Trung Foundation is committed to improving healthcare access for underserved communities through
+                  comprehensive programs that address the barriers to quality healthcare. We believe that access to
+                  healthcare is a fundamental right, and we work to ensure that even the most remote and marginalized
+                  communities can receive the care they need.
+                </p>
+                <p>
+                  Our healthcare access programs focus on bringing medical services directly to communities, training
+                  local health workers, providing health education, and supporting existing healthcare facilities with
+                  resources and expertise.
+                </p>
+                <div className="space-y-2 pt-2">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span>Mobile health clinics that reach remote areas</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span>Training and support for community health workers</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span>Health education and preventive care programs</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span>Medical supplies and equipment for local facilities</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span>Maternal and child health services</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-bold mb-1">Program Started</h3>
-              <p className="text-muted-foreground">March 2017</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <MapPin className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold mb-1">Active Locations</h3>
-              <p className="text-muted-foreground">12 Communities</p>
-            </div>
-            <div className="flex flex-col items-center text-center p-6 bg-muted rounded-lg">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold mb-1">People Served</h3>
-              <p className="text-muted-foreground">10,000+</p>
-            </div>
-          </div>
-
-          <div className="prose prose-lg max-w-none mb-12">
-            <h2>About the Program</h2>
-            <p>
-              Our Healthcare Access Program aims to improve the health and wellbeing of underserved communities by
-              increasing access to quality healthcare services. We believe that healthcare is a fundamental right, and
-              everyone deserves access to essential medical services regardless of their location or economic status.
-            </p>
-            <p>
-              Through this program, we establish community health centers, organize medical camps, train community
-              health workers, provide essential medications, and conduct health education campaigns. Our comprehensive
-              approach addresses both immediate healthcare needs and long-term preventive care.
-            </p>
-
-            <h2>Program Components</h2>
-            <div className="not-prose">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1 bg-primary/10 p-2 rounded-full">
-                        <Heart className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-2">Community Health Centers</h3>
-                        <p className="text-muted-foreground">
-                          Establishing and supporting community health centers that provide basic healthcare services,
-                          maternal care, and preventive health services.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1 bg-primary/10 p-2 rounded-full">
-                        <Heart className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-2">Mobile Medical Camps</h3>
-                        <p className="text-muted-foreground">
-                          Organizing regular medical camps in remote areas to provide check-ups, treatments, and
-                          referrals for specialized care.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1 bg-primary/10 p-2 rounded-full">
-                        <Heart className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-2">Community Health Workers</h3>
-                        <p className="text-muted-foreground">
-                          Training local community members as health workers to provide basic care, health education,
-                          and connect patients with healthcare facilities.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1 bg-primary/10 p-2 rounded-full">
-                        <Heart className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-2">Health Education</h3>
-                        <p className="text-muted-foreground">
-                          Conducting health education campaigns on preventive care, hygiene, nutrition, maternal health,
-                          and common diseases.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+            <div className="md:w-1/2">
+              <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                <Image
+                  src="/trung_logo.png"
+                  alt="Healthcare"
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.src = "/healthcare-professional.png"
+                  }}
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Impact Section 
+      {/* Key Initiatives */}
       <section className="py-16 px-4 md:px-6 bg-muted">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Impact</h2>
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Healthcare Access Initiatives</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="relative h-[300px] rounded-lg overflow-hidden">
-              <Image src="/images/healthcare-2.jpg" alt="Healthcare services" fill className="object-cover" />
+          <Tabs defaultValue="mobile" className="w-full">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8">
+              <TabsTrigger value="mobile">Mobile Clinics</TabsTrigger>
+              <TabsTrigger value="education">Health Education</TabsTrigger>
+              <TabsTrigger value="workers">Community Health</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="mobile">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* Image commented out as requested
+                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/healthcare-access-clinic.jpeg"
+                    alt="Mobile Health Clinic"
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = "/placeholder-6uoes.png"
+                    }}
+                  />
+                </div>
+                */}
+                <div className="w-full">
+                  <h3 className="text-2xl font-bold mb-4">Mobile Health Clinics</h3>
+                  <div className="space-y-4 text-muted-foreground">
+                    <p>
+                      Our Mobile Health Clinics bring essential medical services directly to remote and underserved
+                      communities. These clinics are staffed by qualified healthcare professionals and equipped with
+                      basic diagnostic tools and medications.
+                    </p>
+                    <p>
+                      The mobile clinics provide a range of services, from general check-ups and vaccinations to
+                      specialized care for common health issues. By bringing healthcare to the community, we eliminate
+                      the barriers of distance, cost, and time that often prevent people from seeking medical attention.
+                    </p>
+                    <div className="space-y-2 pt-2">
+                      <h4 className="font-semibold text-foreground">Services Provided:</h4>
+                      <ul className="list-disc pl-5 space-y-1">
+                        <li>General health check-ups and consultations</li>
+                        <li>Vaccinations and immunizations</li>
+                        <li>Maternal and child health services</li>
+                        <li>Treatment for common illnesses</li>
+                        <li>Referrals to specialized care when needed</li>
+                      </ul>
+                    </div>
+                    <div className="pt-4">
+                      <Link href="/get-involved">
+                        <Button>Support This Initiative</Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="education">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                <div className="w-full">
+                  <h3 className="text-2xl font-bold mb-4">Health Education Programs</h3>
+                  <div className="space-y-4 text-muted-foreground">
+                    <p>
+                      Our Health Education Programs empower communities with knowledge about preventive healthcare,
+                      hygiene, nutrition, and common health issues. We believe that education is a powerful tool for
+                      improving health outcomes and preventing disease.
+                    </p>
+                    <p>
+                      Through workshops, community meetings, and educational materials, we provide practical information
+                      that helps individuals and families make informed decisions about their health. We also train
+                      local health educators who can continue to share this knowledge within their communities.
+                    </p>
+                    <div className="space-y-2 pt-2">
+                      <h4 className="font-semibold text-foreground">Focus Areas:</h4>
+                      <ul className="list-disc pl-5 space-y-1">
+                        <li>Preventive healthcare and early detection</li>
+                        <li>Maternal and child health</li>
+                        <li>Nutrition and food safety</li>
+                        <li>Water, sanitation, and hygiene (WASH)</li>
+                        <li>Common diseases and their prevention</li>
+                      </ul>
+                    </div>
+                    <div className="pt-4">
+                      <Link href="/get-involved">
+                        <Button>Support This Initiative</Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                {/* Image commented out as requested
+                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/healthcare-3.jpg"
+                    alt="Health Education Workshop"
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = "/health-education-workshop.png"
+                    }}
+                  />
+                </div>
+                */}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="workers">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* Image commented out as requested
+                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/dr-chaka-barasa.jpeg"
+                    alt="Community Health Workers"
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = "/community-health-workers.png"
+                    }}
+                  />
+                </div>
+                */}
+                <div className="w-full">
+                  <h3 className="text-2xl font-bold mb-4">Community Health Workers Program</h3>
+                  <div className="space-y-4 text-muted-foreground">
+                    <p>
+                      Our Community Health Workers Program trains and supports local individuals to serve as the first
+                      point of contact for healthcare in their communities. These health workers are equipped with basic
+                      medical knowledge and supplies to address common health issues and refer more complex cases to
+                      appropriate facilities.
+                    </p>
+                    <p>
+                      Community health workers play a vital role in bridging the gap between formal healthcare systems
+                      and communities. They provide continuous monitoring, follow-up care, and health education,
+                      ensuring that healthcare remains accessible even between visits from our mobile clinics.
+                    </p>
+                    <div className="space-y-2 pt-2">
+                      <h4 className="font-semibold text-foreground">Program Components:</h4>
+                      <ul className="list-disc pl-5 space-y-1">
+                        <li>Selection and training of community health workers</li>
+                        <li>Provision of basic medical supplies and equipment</li>
+                        <li>Ongoing supervision and support</li>
+                        <li>Integration with local healthcare systems</li>
+                        <li>Regular refresher training and skill development</li>
+                      </ul>
+                    </div>
+                    <div className="pt-4">
+                      <Link href="/get-involved">
+                        <Button>Support This Initiative</Button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </section>
+
+      {/* Program Stats */}
+      <section className="py-16 px-4 md:px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Impact in Numbers</h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <Heart className="text-primary" size={28} />
+              </div>
+              <div className="text-4xl font-bold mb-2">12,500+</div>
+              <div className="text-muted-foreground">Patients Served</div>
             </div>
-            <div className="flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-4">Measurable Results</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold">10,000+ patients</span> received essential healthcare services
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold">5 community health centers</span> established in underserved areas
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold">120 community health workers</span> trained and deployed
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold">45% reduction</span> in preventable diseases in target communities
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold">60% increase</span> in maternal health check-ups and safe deliveries
-                  </div>
-                </li>
-              </ul>
+
+            <div className="text-center">
+              <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <Users className="text-primary" size={28} />
+              </div>
+              <div className="text-4xl font-bold mb-2">45</div>
+              <div className="text-muted-foreground">Community Health Workers</div>
+            </div>
+
+            <div className="text-center">
+              <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <BookOpen className="text-primary" size={28} />
+              </div>
+              <div className="text-4xl font-bold mb-2">75+</div>
+              <div className="text-muted-foreground">Health Education Sessions</div>
+            </div>
+
+            <div className="text-center">
+              <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <ArrowRight className="text-primary" size={28} />
+              </div>
+              <div className="text-4xl font-bold mb-2">35</div>
+              <div className="text-muted-foreground">Communities Reached</div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="bg-white rounded-lg p-8 shadow-sm">
-            <h3 className="text-2xl font-bold mb-4">Success Story: Maternal Health Initiative</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="col-span-2">
-                <p className="mb-4">
-                  In the Lakeside community, maternal mortality rates were alarmingly high due to lack of prenatal care
-                  and skilled birth attendants. Many women were giving birth at home without proper medical support.
-                </p>
-                <p className="mb-4">
-                  Through our Healthcare Access Program, we established a maternal health clinic, trained local
-                  midwives, and conducted extensive education on the importance of prenatal care and facility-based
-                  deliveries.
-                </p>
-                <p>
-                  Within two years, maternal health check-ups increased by 85%, facility-based deliveries rose from 20%
-                  to 75%, and maternal mortality decreased by 70%. Today, the Lakeside community has become a model for
-                  maternal healthcare in the region.
-                </p>
+      {/* Related Programs */}
+      {/*<section className="py-16 px-4 md:px-6 bg-muted">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-4">Related Programs</h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+            Explore other programs that complement our healthcare access initiatives
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="overflow-hidden">
+              <div className="relative h-48">
+                <Image
+                  src="/images/healthcare-1.jpg"
+                  alt="Healthcare Program"
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.src = "/healthcare-abstract.png"
+                  }}
+                />
               </div>
-              <div className="relative h-[200px] md:h-full rounded-lg overflow-hidden">
-                <Image src="/images/causes-3.jpg" alt="Maternal Health Initiative" fill className="object-cover" />
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2">Healthcare Program</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our comprehensive healthcare program that addresses various health challenges in underserved
+                  communities.
+                </p>
+                <Link href="/programs/healthcare">
+                  <Button variant="outline" className="w-full">
+                    Learn More
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="relative h-48">
+                <Image
+                  src="/images/food-security-packaging.jpeg"
+                  alt="Samaritan Packages"
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.src = "/placeholder.svg?height=200&width=400&query=aid%20packages"
+                  }}
+                />
               </div>
-            </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2">Samaritan Packages</h3>
+                <p className="text-muted-foreground mb-4">
+                  Essential supplies including food, hygiene items, and basic necessities for vulnerable families.
+                </p>
+                <Link href="/programs/samaritan-packages">
+                  <Button variant="outline" className="w-full">
+                    Learn More
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="relative h-48">
+                <Image
+                  src="/images/community-centers.jpeg"
+                  alt="Community Centers"
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.src = "/placeholder.svg?height=200&width=400&query=community%20center"
+                  }}
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2">Community Centers</h3>
+                <p className="text-muted-foreground mb-4">
+                  Safe spaces that provide various services including health education and basic healthcare.
+                </p>
+                <Link href="/programs/community-centers">
+                  <Button variant="outline" className="w-full">
+                    Learn More
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>*/}
 
-      {/* Future Plans */}
+      {/* Get Involved */}
       <section className="py-16 px-4 md:px-6 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-8">Future Plans</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-            We're committed to expanding our Healthcare Access Program to reach more communities in need.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Expansion</h3>
-                <p className="text-muted-foreground mb-4">
-                  Establishing 3 additional community health centers in the next two years, reaching an additional 6,000
-                  people.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Specialized Care</h3>
-                <p className="text-muted-foreground mb-4">
-                  Introducing specialized healthcare services such as dental care, eye care, and mental health support
-                  in existing centers.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Telemedicine</h3>
-                <p className="text-muted-foreground mb-4">
-                  Implementing telemedicine services to connect patients in remote areas with specialized healthcare
-                  providers.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* How to Support */}
-      <section className="py-16 px-4 md:px-6 bg-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6 text-foreground">Support Our Healthcare Access Program</h2>
+        <div className="container mx-auto max-w-6xl text-center">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">Support Our Healthcare Access Programs</h2>
           <p className="text-xl max-w-2xl mx-auto mb-8 text-muted-foreground">
-            Your contribution can help us provide essential healthcare services to thousands of people in need.
+            Your contribution can help us bring essential healthcare services to more underserved communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/donate">
@@ -271,50 +402,6 @@ export default function HealthcareAccessPage() {
                 Volunteer With Us
               </Button>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Programs */}
-      <section className="py-16 px-4 md:px-6 bg-muted">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Related Programs</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <Image src="/images/women-1.jpg" alt="Women Empowerment" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Women Empowerment</h3>
-                <p className="text-muted-foreground mb-4">
-                  Supporting women through skills training, mentorship, and entrepreneurship opportunities.
-                </p>
-                <Link
-                  href="/programs/women-empowerment"
-                  className="text-primary flex items-center gap-1 hover:underline font-medium"
-                >
-                  Learn More <ArrowRight size={16} />
-                </Link>
-              </CardContent>
-            </Card>
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <Image src="/images/causes-2.jpg" alt="Samaritan Packages" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Samaritan Packages</h3>
-                <p className="text-muted-foreground mb-4">
-                  Providing essential supplies and basic needs to vulnerable families and individuals.
-                </p>
-                <Link
-                  href="/programs/samaritan-packages"
-                  className="text-primary flex items-center gap-1 hover:underline font-medium"
-                >
-                  Learn More <ArrowRight size={16} />
-                </Link>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>

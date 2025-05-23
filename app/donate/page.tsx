@@ -96,7 +96,7 @@ export default function DonatePage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/medical-camp-4.jpg"
+          src="/trung_logo.png"
           alt="Support Our Mission"
           fill
           className="object-cover brightness-[0.7]"
@@ -209,7 +209,7 @@ export default function DonatePage() {
       </section>
 
       {/* Impact Stories */}
-      <section className="py-16 px-4 md:px-6 bg-muted">
+      {/*<section className="py-16 px-4 md:px-6 bg-muted">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-4">Impact Stories</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
@@ -239,10 +239,10 @@ export default function DonatePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Other Ways to Support */}
-      <section className="py-16 px-4 md:px-6 bg-white">
+      {/*<section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">Other Ways to Support</h2>
 
@@ -287,10 +287,10 @@ export default function DonatePage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Transparency */}
-      <section className="py-16 px-4 md:px-6 bg-muted">
+      {/*<section className="py-16 px-4 md:px-6 bg-muted">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="md:w-1/2">
@@ -326,10 +326,10 @@ export default function DonatePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Donor Recognition */}
-      <section className="py-16 px-4 md:px-6 bg-white">
+      {/*<section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-4">Our Supporters</h2>
           <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
@@ -371,7 +371,7 @@ export default function DonatePage() {
             <Button variant="outline">View All Supporters</Button>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* FAQ */}
       <section className="py-16 px-4 md:px-6 bg-muted">

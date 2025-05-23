@@ -327,7 +327,7 @@ export default function ChristmasActivitiesPage() {
       </section>
 
       {/* Photo Gallery */}
-     {/* <section className="py-16 px-4 md:px-6 bg-white">
+      {/* <section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-8">Memories from Previous Years</h2>
 

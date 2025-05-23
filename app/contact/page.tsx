@@ -13,19 +13,24 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/healthcare-3.jpg"
-          alt="Contact Us"
+          src="/images/healthcare-volunteers.jpeg"
+          alt="Contact Us - Healthcare Volunteers"
           fill
           className="object-cover brightness-[0.7]"
           priority
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.src = "/placeholder.svg?height=400&width=800&text=Contact+Us"
+          }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
-          <p className="text-x text-white max-w-2xl">
+          <p className="text-xl text-white max-w-2xl">
             We'd love to hear from you. Reach out with questions, ideas, or support.
           </p>
         </div>
       </section>
+
       {/* Contact Information */}
       <section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
@@ -33,7 +38,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
               <p className="text-muted-foreground mb-8">
-                Have questions about our programs as Trung Foundation, We're here to help. Fill out the form and we'll
+                Have questions about our programs as Trung Foundation? We're here to help. Fill out the form and we'll
                 get back to you as soon as possible.
               </p>
 
@@ -59,8 +64,6 @@ export default function ContactPage() {
                     <h3 className="font-semibold text-lg">Email Us</h3>
                     <div className="text-muted-foreground">
                       <p>General Inquiries: Trungmusana@gmail.com</p>
-                      {/* <p>Donations: donate@foundation.org</p>
-                    <p>Volunteer: Trungmusana@gmail.com</p>*/}
                     </div>
                   </div>
                 </div>
@@ -73,7 +76,6 @@ export default function ContactPage() {
                     <h3 className="font-semibold text-lg">Call Us</h3>
                     <div className="text-muted-foreground">
                       <p>Main Office: (256) 762-121-251</p>
-                      {/* <p>Donation Hotline: (123) 456-7891</p>*/}
                       <p>Hours: Monday-Friday, 9am-5pm</p>
                     </div>
                   </div>
@@ -126,74 +128,55 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      {/* Team Members 
+
+      {/* Our Healthcare Team */}
       <section className="py-16 px-4 md:px-6 bg-muted">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Our Healthcare Team</h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/john.jpg" alt="John Davis" fill className="object-cover" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">John Davis</h3>
-                <p className="text-primary mb-2">Community Outreach Director</p>
-                <p className="text-muted-foreground mb-4">
-                  "I'm passionate about connecting our foundation with the communities we serve. Feel free to reach out
-                  with partnership ideas or community needs."
-                </p>
-                <div className="flex gap-2">
-                  <Button variant="outline" size="sm">
-                    <Mail className="h-4 w-4 mr-2" />
-                    Contact
-                  </Button>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative h-64 md:h-80 bg-gray-100 rounded-lg overflow-hidden">
+              <Image
+                src="/images/healthcare-volunteers.jpeg"
+                alt="Healthcare Volunteers and Professionals"
+                fill
+                className="object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement
+                  target.src = "/placeholder.svg?height=320&width=480&text=Healthcare+Team"
+                }}
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Professional Healthcare Support</h3>
+              <p className="text-muted-foreground mb-6">
+                Our dedicated healthcare professionals and volunteers work tirelessly to provide quality medical care
+                and health education to underserved communities. Our team includes qualified doctors, nurses, and
+                community health workers committed to improving health outcomes.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="h-2 w-2 bg-primary rounded-full"></div>
+                  <span>Qualified medical professionals</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="h-2 w-2 bg-primary rounded-full"></div>
+                  <span>Community health education</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="h-2 w-2 bg-primary rounded-full"></div>
+                  <span>Mobile clinic services</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="h-2 w-2 bg-primary rounded-full"></div>
+                  <span>Preventive care programs</span>
                 </div>
               </div>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/maria.jpg" alt="Maria Rodriguez" fill className="object-cover" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Maria Rodriguez</h3>
-                <p className="text-primary mb-2">Healthcare Program Manager</p>
-                <p className="text-muted-foreground mb-4">
-                  "I oversee our healthcare initiatives and work closely with medical professionals. Contact me for
-                  questions about our health programs."
-                </p>
-                <div className="flex gap-2">
-                  <Button variant="outline" size="sm">
-                    <Mail className="h-4 w-4 mr-2" />
-                    Contact
-                  </Button>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="relative h-64">
-                <Image src="/images/musana.jpg" alt="Trung Musana" fill className="object-cover" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Andrew Trung Musana</h3>
-                <p className="text-primary mb-2">Executive Director</p>
-                <p className="text-muted-foreground mb-4">
-                  "As the director of our foundation, I'm committed to our mission of empowering communities. I welcome
-                  your thoughts and feedback."
-                </p>
-                <div className="flex gap-2">
-                  <Button variant="outline" size="sm">
-                    <Mail className="h-4 w-4 mr-2" />
-                    Contact
-                  </Button>
-                </div>
-              </div>
-            </Card>
+            </div>
           </div>
         </div>
-      </section>*/}
+      </section>
+
       {/* Map */}
       <section className="py-16 px-4 md:px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
@@ -202,12 +185,6 @@ export default function ContactPage() {
           <div className="h-[400px] w-full rounded-lg overflow-hidden border">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16401664.413293308!2d15.416767186852198!3d1.2145618335131774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbda0cd3ebaef%3A0x5bef56aedc890201!2sAmor%20Way%20Ministries!5e0!3m2!1sen!2sug!4v1743576445083!5m2!1sen!2sug"
-              width="600"
-              height="450"
-              style="border:0;"
-              allowFullScreen
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -219,6 +196,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
       {/* FAQ */}
       <section className="py-16 px-4 md:px-6 bg-muted">
         <div className="container mx-auto max-w-4xl">
@@ -242,7 +220,7 @@ export default function ContactPage() {
             </Card>
 
             <Card className="p-6">
-              <h3 className="text-xl font-bold mb-2">How can I arrange a tour of your facilities?</h3>
+              <h3 className="text-xl font-bold mb-2">How can I arrange a tour of our facilities?</h3>
               <p className="text-muted-foreground">
                 We offer guided tours of our main office and some program sites by appointment. Please contact us at
                 Trungmusana@gmail.com or call (256) 762-121-251 to schedule a visit.
@@ -260,6 +238,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
       {/* Newsletter */}
       <section className="py-16 px-4 md:px-6 bg-primary text-primary-foreground">
         <div className="container mx-auto max-w-6xl">

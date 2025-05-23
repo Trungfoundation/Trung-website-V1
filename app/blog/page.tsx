@@ -29,11 +29,43 @@ export default function BlogPage() {
         post.categories.some((category) => category.toLowerCase() === categoryFilter.toLowerCase()),
       )
     : blogPosts
+
+  // Function to get appropriate image based on category
+  const getImageForCategory = (post: (typeof blogPosts)[0]) => {
+    const category = post.categories[0]?.toLowerCase() || ""
+
+    if (category.includes("education")) {
+      return "/images/education5.jpg"
+    } else if (category.includes("healthcare")) {
+      return "/images/healthcare-access-clinic.jpeg"
+    } else if (category.includes("women")) {
+      return "/images/women-certification.jpeg"
+    } else if (category.includes("community")) {
+      return "/images/community-centers.jpeg"
+    } else if (category.includes("orphan") || category.includes("children")) {
+      return "/images/orphan-support-meal.jpeg"
+    } else if (category.includes("partnership")) {
+      return "/images/foundation-meeting.jpeg"
+    } else {
+      return "/images/where-we-work.jpeg"
+    }
+  }
+
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
-        <Image src="/images/events.jpg" alt="Foundation Blog" fill className="object-cover brightness-[0.7]" priority />
+        <Image
+          src="/images/community-outreach.jpeg"
+          alt="Foundation Blog"
+          fill
+          className="object-cover brightness-[0.7]"
+          priority
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.src = "/foundation-blog.png"
+          }}
+        />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">News & Stories</h1>
           <p className="text-xl text-white max-w-2xl">
@@ -56,12 +88,16 @@ export default function BlogPage() {
                 {/* Featured Article */}
                 {!categoryFilter && (
                   <Card className="mb-12 overflow-hidden border-t-4 border-t-primary/70 transition-all duration-300 hover:shadow-lg">
-                    <div className="relative h-[400px]">
+                    <div className="relative h-[400px] bg-gray-100">
                       <Image
-                        src={blogPosts[0].image || "/placeholder.svg"}
+                        src={getImageForCategory(blogPosts[0]) || "/placeholder.svg"}
                         alt={blogPosts[0].title}
                         fill
                         className="object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.src = "/placeholder.svg?height=400&width=800&query=Education+Center"
+                        }}
                       />
                       <div className="absolute top-4 left-4">
                         <Badge className="bg-primary text-primary-foreground shadow-md">Featured</Badge>
@@ -104,7 +140,7 @@ export default function BlogPage() {
                       date={post.date}
                       author={post.author}
                       category={post.categories[0]}
-                      image={post.image}
+                      image={getImageForCategory(post)}
                       slug={post.slug}
                     />
                   ))}
@@ -216,12 +252,16 @@ export default function BlogPage() {
                 <h3 className="text-xl font-bold mb-4">Recent Posts</h3>
                 <div className="space-y-4">
                   <div className="flex gap-3">
-                    <div className="relative h-16 w-16 flex-shrink-0">
+                    <div className="relative h-16 w-16 flex-shrink-0 bg-gray-100">
                       <Image
-                        src="/images/medical-camp-2.jpg"
-                        alt="Recent post"
+                        src="/images/community-outreach.jpeg"
+                        alt="Volunteer Spotlight"
                         fill
                         className="object-cover rounded-md"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.src = "/placeholder.svg?height=64&width=64&query=Volunteer"
+                        }}
                       />
                     </div>
                     <div>
@@ -235,12 +275,16 @@ export default function BlogPage() {
                   </div>
 
                   <div className="flex gap-3">
-                    <div className="relative h-16 w-16 flex-shrink-0">
+                    <div className="relative h-16 w-16 flex-shrink-0 bg-gray-100">
                       <Image
-                        src="/images/healthcare-2.jpg"
-                        alt="Recent post"
+                        src="/images/healthcare-access-clinic.jpeg"
+                        alt="Healthcare Partnership"
                         fill
                         className="object-cover rounded-md"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.src = "/placeholder.svg?height=64&width=64&query=Healthcare"
+                        }}
                       />
                     </div>
                     <div>
@@ -254,8 +298,17 @@ export default function BlogPage() {
                   </div>
 
                   <div className="flex gap-3">
-                    <div className="relative h-16 w-16 flex-shrink-0">
-                      <Image src="/images/volunteer-2.jpg" alt="Recent post" fill className="object-cover rounded-md" />
+                    <div className="relative h-16 w-16 flex-shrink-0 bg-gray-100">
+                      <Image
+                        src="/images/education5.jpg"
+                        alt="Education Programs"
+                        fill
+                        className="object-cover rounded-md"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.src = "/placeholder.svg?height=64&width=64&query=Education"
+                        }}
+                      />
                     </div>
                     <div>
                       <h4 className="font-medium line-clamp-2 mb-1">
@@ -268,12 +321,16 @@ export default function BlogPage() {
                   </div>
 
                   <div className="flex gap-3">
-                    <div className="relative h-16 w-16 flex-shrink-0">
+                    <div className="relative h-16 w-16 flex-shrink-0 bg-gray-100">
                       <Image
-                        src="/images/medical-camp-3.jpg"
-                        alt="Recent post"
+                        src="/images/foundation-meeting.jpeg"
+                        alt="Fundraising Gala"
                         fill
                         className="object-cover rounded-md"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.src = "/placeholder.svg?height=64&width=64&query=Fundraising"
+                        }}
                       />
                     </div>
                     <div>
@@ -333,8 +390,17 @@ interface BlogCardProps {
 function BlogCard({ title, excerpt, date, author, category, image, slug }: BlogCardProps) {
   return (
     <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-lg border-t-4 border-t-primary/70">
-      <div className="relative h-48">
-        <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
+      <div className="relative h-48 bg-gray-100">
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={title}
+          fill
+          className="object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.src = `/placeholder.svg?height=192&width=384&query=${encodeURIComponent(category)}`
+          }}
+        />
         <div className="absolute top-3 left-3">
           <Badge variant="secondary" className="bg-white/80 text-foreground backdrop-blur-sm shadow-sm">
             {category}

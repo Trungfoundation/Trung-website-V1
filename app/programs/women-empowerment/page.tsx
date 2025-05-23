@@ -3,22 +3,22 @@ import Link from "next/link"
 import { ArrowRight, CheckCircle, Briefcase, GraduationCap, Users } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
 
 export default function WomenEmpowermentPage() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
-        <Image
-          src="/images/women-certification.jpeg"
-          alt="Women Empowerment Programs"
-          fill
-          className="object-cover brightness-[0.7]"
-          priority
-        />
+        <div className="absolute inset-0 bg-gray-800">
+          <Image
+            src="/placeholder-vvtp7.png"
+            alt="Women Empowerment Programs"
+            fill
+            className="object-cover brightness-[0.7]"
+            priority
+          />
+        </div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Women Empowerment Programs</h1>
           <p className="text-xl text-white max-w-2xl">
@@ -69,12 +69,12 @@ export default function WomenEmpowermentPage() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="relative h-[400px] w-full rounded-lg overflow-hidden bg-gray-100">
                 <Image
-                  src="/trung_logo.png"
+                  src="/placeholder.svg?height=400&width=600&query=women%20skills%20training"
                   alt="Women in skills training"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -95,11 +95,22 @@ export default function WomenEmpowermentPage() {
             </TabsList>
 
             <TabsContent value="skills">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* 
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                  <Image src="/images/workshop-1.jpg" alt="Skills Training" fill className="object-cover" />
+                  <Image
+                    src="/images/workshop-1.jpg"
+                    alt="Skills Training"
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = "/placeholder.svg?height=400&width=600&query=skills%20training"
+                    }}
+                  />
                 </div>
-                <div>
+                */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Vocational Skills Training</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -133,8 +144,8 @@ export default function WomenEmpowermentPage() {
             </TabsContent>
 
             <TabsContent value="business">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Entrepreneurship Development</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -164,28 +175,36 @@ export default function WomenEmpowermentPage() {
                     </div>
                   </div>
                 </div>
+                {/* 
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
-                    src="/images/women-crafts-program.jpg"
+                    src="/placeholder.svg?height=400&width=600&query=women%20entrepreneurs"
                     alt="Entrepreneurship Development"
                     fill
                     className="object-cover"
                   />
                 </div>
+                */}
               </div>
             </TabsContent>
 
             <TabsContent value="leadership">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* 
                 <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
                     src="/images/women-certification.jpeg"
                     alt="Leadership Development"
                     fill
-                    className="object-contain object-center"
+                    className="object-contain object-center bg-white"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = "/placeholder.svg?height=400&width=600&query=women%20leadership"
+                    }}
                   />
                 </div>
-                <div>
+                */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Leadership Development</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -220,95 +239,6 @@ export default function WomenEmpowermentPage() {
           </Tabs>
         </div>
       </section>
-
-      {/* Impact Stories */}
-      {/*<section className="py-16 px-4 md:px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-4">Impact Stories</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-            Real stories of transformation from our women empowerment programs
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <Image src="/images/women-crafts-program.jpg" alt="Grace's Story" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <Badge className="mb-2">Skills Training</Badge>
-                <h3 className="text-xl font-bold mb-2">Grace's Journey to Independence</h3>
-                <p className="text-muted-foreground mb-4">
-                  "After learning tailoring skills, I started my own small business making clothes. Now I can pay for my
-                  children's education and have even hired two other women from my community."
-                </p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">Grace M.</div>
-                    <div className="text-sm text-muted-foreground">Program Graduate</div>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    Read Full Story
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <Image src="/images/women-1.jpg" alt="Sarah's Story" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <Badge className="mb-2">Entrepreneurship</Badge>
-                <h3 className="text-xl font-bold mb-2">Sarah's Growing Business</h3>
-                <p className="text-muted-foreground mb-4">
-                  "With the business training and microloan I received, I expanded my vegetable stand into a small
-                  grocery store. My income has tripled, and I'm now sending my daughter to university."
-                </p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">Sarah N.</div>
-                    <div className="text-sm text-muted-foreground">Entrepreneur</div>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    Read Full Story
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="relative h-48">
-                <Image src="/images/training-seminar-1.jpg" alt="Mary's Story" fill className="object-cover" />
-              </div>
-              <CardContent className="p-6">
-                <Badge className="mb-2">Leadership</Badge>
-                <h3 className="text-xl font-bold mb-2">Mary Leads Community Change</h3>
-                <p className="text-muted-foreground mb-4">
-                  "After the leadership program, I organized women in my village to advocate for a clean water source.
-                  Today, we have a new well that serves over 200 families and has reduced waterborne diseases."
-                </p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">Mary K.</div>
-                    <div className="text-sm text-muted-foreground">Community Leader</div>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    Read Full Story
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-8">
-            <Link href="/blog">
-              <Button variant="outline">
-                View More Stories <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>*/}
 
       {/* Program Stats */}
       <section className="py-16 px-4 md:px-6 bg-muted">

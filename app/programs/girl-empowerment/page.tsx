@@ -1,11 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Heart, Users, Briefcase, GraduationCap } from "lucide-react"
+import { CheckCircle, Heart, Users, Briefcase, GraduationCap } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
 
 export default function GirlEmpowermentPage() {
   return (
@@ -13,11 +11,14 @@ export default function GirlEmpowermentPage() {
       {/* Hero Section */}
       <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
-          src="/images/education5.jpg"
+          src="/placeholder.svg?height=400&width=800&text=Girl+Child+Empowerment"
           alt="Girl Child Empowerment Programs"
           fill
           className="object-cover brightness-[0.7]"
           priority
+          onError={(e) => {
+            e.currentTarget.src = "/placeholder.svg?height=400&width=600&text=Image+Not+Available"
+          }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Girl Child Empowerment</h1>
@@ -71,8 +72,16 @@ export default function GirlEmpowermentPage() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                <Image src="/images/education6.jpg" alt="Girls in classroom" fill className="object-cover" />
+              <div className="relative h-[400px] w-full rounded-lg overflow-hidden bg-gray-100">
+                <Image
+                  src="/placeholder.svg?height=400&width=600&text=Girls+in+Classroom"
+                  alt="Girls in classroom"
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "/placeholder.svg?height=400&width=600&text=Image+Not+Available"
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -92,11 +101,11 @@ export default function GirlEmpowermentPage() {
             </TabsList>
 
             <TabsContent value="education">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/education5.jpg" alt="Girls' Education" fill className="object-cover" />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Girls' Education Program</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -131,8 +140,8 @@ export default function GirlEmpowermentPage() {
             </TabsContent>
 
             <TabsContent value="skills">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Vocational Skills Training</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -163,18 +172,18 @@ export default function GirlEmpowermentPage() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/workshop-1.jpg" alt="Vocational Training" fill className="object-cover" />
-                </div>
+                </div> */}
               </div>
             </TabsContent>
 
             <TabsContent value="leadership">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/women-1.jpg" alt="Leadership Development" fill className="object-cover" />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Leadership Development Program</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>

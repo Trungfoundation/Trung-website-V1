@@ -277,7 +277,7 @@ export default function CommunityCentersPage() {
       </section>
 
       {/* Related Programs */}
-      <section className="py-16 px-4 md:px-6 bg-muted">
+      {/*<section className="py-16 px-4 md:px-6 bg-muted">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-12">Related Programs</h2>
 
@@ -318,7 +318,7 @@ export default function CommunityCentersPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section>*/}
     </main>
   )
 }

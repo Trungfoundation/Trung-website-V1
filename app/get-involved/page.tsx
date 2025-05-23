@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Calendar, CheckCircle, Clock, DollarSign, Heart, MapPin, Share2, Users } from "lucide-react"
@@ -47,8 +49,8 @@ export default function GetInvolvedPage() {
             </TabsList>
 
             <TabsContent value="volunteer">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Volunteer Your Time</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -80,14 +82,14 @@ export default function GetInvolvedPage() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
                     src="/images/volunteer-2.jpg"
                     alt="Volunteers working together"
                     fill
                     className="object-cover"
                   />
-                </div>
+                </div> */}
               </div>
 
               <div className="mt-12">
@@ -154,16 +156,16 @@ export default function GetInvolvedPage() {
             </TabsContent>
 
             <TabsContent value="donate">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
                     src="/images/school-improvement-1.jpg"
                     alt="Supporting our cause"
                     fill
                     className="object-cover"
                   />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Support Our Work</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -215,8 +217,8 @@ export default function GetInvolvedPage() {
             </TabsContent>
 
             <TabsContent value="advocate">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Raise Your Voice</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -270,9 +272,9 @@ export default function GetInvolvedPage() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/training-seminar-1.jpg" alt="Advocacy in action" fill className="object-cover" />
-                </div>
+                </div> */}
               </div>
 
               <div className="mt-12">
@@ -335,11 +337,11 @@ export default function GetInvolvedPage() {
             </TabsContent>
 
             <TabsContent value="partner">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/workshop-1.jpg" alt="Partnership opportunities" fill className="object-cover" />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Partner With Us</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -428,33 +430,33 @@ export default function GetInvolvedPage() {
                 <h3 className="text-2xl font-bold mb-6">Featured Partners</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   <div className="text-center">
-                    <div className="relative h-32 w-full mb-4">
+                    {/* <div className="relative h-32 w-full mb-4">
                       <Image src="/images/our-partner-4.jpg" alt="Partner logo" fill className="object-contain" />
-                    </div>
+                    </div> */}
                     <h4 className="font-semibold">ABC Corporation</h4>
                     <p className="text-sm text-muted-foreground">Corporate Partner</p>
                   </div>
 
                   <div className="text-center">
-                    <div className="relative h-32 w-full mb-4">
+                    {/* <div className="relative h-32 w-full mb-4">
                       <Image src="/images/our-partner-5.jpg" alt="Partner logo" fill className="object-contain" />
-                    </div>
+                    </div> */}
                     <h4 className="font-semibold">XYZ Foundation</h4>
                     <p className="text-sm text-muted-foreground">Foundation Partner</p>
                   </div>
 
                   <div className="text-center">
-                    <div className="relative h-32 w-full mb-4">
+                    {/* <div className="relative h-32 w-full mb-4">
                       <Image src="/images/our-partner-4.jpg" alt="Partner logo" fill className="object-contain" />
-                    </div>
+                    </div> */}
                     <h4 className="font-semibold">Community Health Alliance</h4>
                     <p className="text-sm text-muted-foreground">Nonprofit Partner</p>
                   </div>
 
                   <div className="text-center">
-                    <div className="relative h-32 w-full mb-4">
+                    {/* <div className="relative h-32 w-full mb-4">
                       <Image src="/images/our-partner-5.jpg" alt="Partner logo" fill className="object-contain" />
-                    </div>
+                    </div> */}
                     <h4 className="font-semibold">City Department of Health</h4>
                     <p className="text-sm text-muted-foreground">Government Partner</p>
                   </div>

@@ -73,7 +73,7 @@ export default function Home() {
       <section className="relative w-full">
         <Carousel className="w-full" setApi={setApi} opts={{ loop: true }}>
           <CarouselContent>
-         {/*   <CarouselItem>
+            {/*   <CarouselItem>
               <div className="relative h-[500px] w-full">
                 <Image
                   src="/images/cover.jpg"

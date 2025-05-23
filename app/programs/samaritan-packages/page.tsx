@@ -9,7 +9,7 @@ export default function SamaritanPackagesPage() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[300px] md:h-[400px]">
+      {/* <section className="relative w-full h-[300px] md:h-[400px]">
         <Image
           src="/images/samaritan-package-supplies.jpeg"
           alt="Samaritan Packages Program"
@@ -23,7 +23,7 @@ export default function SamaritanPackagesPage() {
             Providing essential supplies and support to vulnerable families and communities
           </p>
         </div>
-      </section>
+      </section>*/}
 
       {/* Program Overview */}
       <section className="py-16 px-4 md:px-6 bg-white">
@@ -69,12 +69,7 @@ export default function SamaritanPackagesPage() {
             </div>
             <div className="md:w-1/2">
               <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-                <Image
-                  src="/images/samaritan-package-supplies.jpeg"
-                  alt="Samaritan Packages"
-                  fill
-                  className="object-cover"
-                />
+                <Image src="/trung_logo.png" alt="Samaritan Packages" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -94,16 +89,16 @@ export default function SamaritanPackagesPage() {
             </TabsList>
 
             <TabsContent value="food">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image
-                    src="/images/samaritan-package-supplies.jpeg"
+                    src="/images/samaritan-package-food.jpeg"
                     alt="Food Security Packages"
                     fill
                     className="object-cover"
                   />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Food Security Packages</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -137,8 +132,8 @@ export default function SamaritanPackagesPage() {
             </TabsContent>
 
             <TabsContent value="hygiene">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Hygiene and Health Kits</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
@@ -168,18 +163,18 @@ export default function SamaritanPackagesPage() {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/healthcare-3.jpg" alt="Hygiene and Health Kits" fill className="object-cover" />
-                </div>
+                </div> */}
               </div>
             </TabsContent>
 
             <TabsContent value="education">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+              <div className="grid md:grid-cols-1 gap-12 items-center">
+                {/* <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
                   <Image src="/images/education5.jpg" alt="Education Support Packages" fill className="object-cover" />
-                </div>
-                <div>
+                </div> */}
+                <div className="w-full">
                   <h3 className="text-2xl font-bold mb-4">Education Support Packages</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
